@@ -52,6 +52,7 @@ code {
   padding-top: 300px;
   border-right: 1px solid var(--colour-black);
   font-weight: 500;
+  position: fixed;
 }
 
 .nav-bar-item-icon, .logout-icon {
@@ -62,7 +63,7 @@ code {
 
 .nav-bar-logo {
   width: 140px;
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
 }
@@ -70,14 +71,19 @@ code {
 /* Log Out Button */
 
 .logout-button {
-  position: absolute;
+  position: fixed;
   text-decoration: none;
   color: var(--colour-black);
   bottom: 40px;
-  left: 2rem;
-  width: 180px;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 179px;
 }
 
+.logout-button:hover {
+  background-color: var(--colour-grey);
+}
 
 /* Animations */
 
