@@ -1,5 +1,6 @@
 import React from 'react';
 import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo } from '../assets/Icons.js';
+import LogoutButton from './LogoutButton.js';
 
 const NavBar = () => {
 
@@ -35,6 +36,8 @@ const NavBar = () => {
                 Library
             </a>
         </div>
+
+        <LogoutButton />
     </>
     );
 }

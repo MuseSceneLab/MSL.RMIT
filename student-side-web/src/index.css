@@ -54,7 +54,7 @@ code {
   font-weight: 500;
 }
 
-.nav-bar-item-icon {
+.nav-bar-item-icon, .logout-icon {
   margin-right: 10%;
   width: 25px;
   height: 25px;
@@ -65,6 +65,17 @@ code {
   position: absolute;
   top: 20px;
   left: 20px;
+}
+
+/* Log Out Button */
+
+.logout-button {
+  position: absolute;
+  text-decoration: none;
+  color: var(--colour-black);
+  bottom: 40px;
+  left: 2rem;
+  width: 180px;
 }
 
 
