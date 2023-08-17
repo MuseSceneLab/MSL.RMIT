@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .center-box {
+    background-color: #403444;
+    width: 900px;
+    height: 680px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .icon img {
+    margin-left: 250px;
+    width: 230px;
+    height: 230px;
+  }
+  
+  .center-text {
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+    font-family: "Kanit", sans-serif;
+    margin-left: 250px;
+  }
+  
+  .bg {
+    background: linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 103.4%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-options-container {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .user-option {
+      cursor: pointer;
+      background-color: white;
+      border-radius: 1rem;
+  
+  }
+  
+  .user-option img {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: 90px;
+    margin-right: 90px;
+  }
