@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,75 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Setup */
+
+:root {
+  --colour-dark-purple: #262261;
+  --colour-orange: #f7931d;
+  --colour-ivory: #fcf5e4;
+  --colour-red: #ff0000;
+  --colour-green: #01a32f;
+  --colour-hot-pink: #ed2a7b;
+  --colour-grey: #d9d9d9;
+  --colour-white: #ffffff;
+  --colour-black: #000000;
+  --colour-purple-grey: #3b3743;
+}
+
+/* Navigation Bar */
+
+.nav-bar-item {
+  text-decoration: none;
+  color: var(--colour-black);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.nav-bar-item:hover, .item-selected {
+  background-color: var(--colour-grey);
+}
+
+.item-selected {
+  border-left: #ed2a7b solid 5px;
+  padding-left: calc(2rem - 5px);
+  animation: grow-border 0.2s ease-in-out;
+}
+
+.nav-bar {
+  width: 180px; 
+  height: 100vh;
+  padding-top: 300px;
+  border-right: 1px solid var(--colour-black);
+  font-weight: 500;
+}
+
+.nav-bar-item-icon {
+  margin-right: 10%;
+  width: 25px;
+  height: 25px;
+}
+
+.nav-bar-logo {
+  width: 140px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+/* Animations */
+
+@keyframes grow-border {
+  0% {
+    border-left: #ed2a7b solid 0px;
+    padding-left: calc(2rem - 0px);
+  }
+  100% {
+    border-left: #ed2a7b solid 5px;
+    padding-left: calc(2rem - 5px);
+  }
 }
