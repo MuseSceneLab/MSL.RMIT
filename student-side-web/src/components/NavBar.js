@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo } from '../assets/Icons.js';
 import LogoutButton from './LogoutButton.js';
 
 const NavBar = () => {
 
-    const [itemSelected, setItemSelected] = React.useState('Home');
+    const location = window.location.pathname;
 
-    const selectItem = (item) => {
-        setItemSelected(item);
-    }
+    useEffect(() => {}, [location]);
 
     return (
     <>
@@ -16,22 +14,22 @@ const NavBar = () => {
         <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
 
         <div className='nav-bar d-flex flex-column'>
-            <a className={itemSelected === 'Home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='#' onClick={()=>selectItem('Home')}>
+            <a className={location === '/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/'>
                 <HomeIcon />
                 Home
             </a>
 
-            <a className={itemSelected === 'Studio' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='#' onClick={()=>selectItem('Studio')}>
+            <a className={location === '/studio' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/studio'>
                 <StudioIcon />
                 Studio
             </a>
 
-            <a className={itemSelected === 'Inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='#' onClick={()=>selectItem('Inbox')}>
+            <a className={location === '/inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/inbox'>
                 <InboxIcon />
                 Inbox
             </a>
 
-            <a className={itemSelected === 'Library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='#' onClick={()=>selectItem('Library')}>
+            <a className={location === '/library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/library'>
                 <LibraryIcon />
                 Library
             </a>
