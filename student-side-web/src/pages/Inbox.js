@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+
 
 const Inbox = () => {
     return (
