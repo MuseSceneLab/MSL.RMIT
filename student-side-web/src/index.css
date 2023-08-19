@@ -85,6 +85,111 @@ code {
   background-color: var(--colour-grey);
 }
 
+/* Signup Form */
+.form-box {
+  background-color: #3B3743;
+  width: 550px;
+  height: 800px;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+  position: relative; 
+}
+
+.SignupForm {
+  background: linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 103.4%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.form-container {
+  width: 100%;
+  position: relative;
+  max-width: 450px;
+  padding: 30px;
+  padding-top: 0px;
+}
+
+.container .form {
+  margin-top: 5px;
+  margin: 0px 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form .input-box input {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border-radius: 6px;
+  padding: 0 15px;
+  border: none;
+  margin-top: 10px;
+}
+
+.form .input-box label {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form .column {
+  display: flex;
+  column-gap: 35px;
+}
+
+.form-select-box select {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  border-radius: 6px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.form-login {
+  display: flex;
+  width: 100%;
+  margin-left: 47%;
+  color: #909090;
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.login-link {
+  color: #909090;
+  margin-left: 5px;
+}
+
+.signup {
+  background-color: #ED2A7B;
+  position: relative;
+  height: 50px;
+  width: 107%;
+  outline: none;
+  border-radius: 6px;
+  border: none;
+  margin-top: 25px;
+  color: white;
+  font-weight: 550;
+  font-size: 15px;
+}
+
 /* Animations */
 
 @keyframes grow-border {
