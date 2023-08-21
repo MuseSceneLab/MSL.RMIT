@@ -14,7 +14,7 @@ const NavBar = () => {
         <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
 
         <div className='nav-bar d-flex flex-column'>
-            <a className={location === '/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/'>
+            <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/home'>
                 <HomeIcon />
                 Home
             </a>
