@@ -14,13 +14,13 @@ function SignupForm() {
         <form action="#" class="form">
         <div class="column"> {/* First two input boxes wrapped in column container for 1x2 display */}
           <div class="input-box">
-              <label htmlFor="firstName">Dayana</label>
-              <input type="text" id="firstName" placeholder="First Name" />
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Dayana" />
           </div>
 
             <div class="input-box">
-              <label htmlFor="lastName">Torres</label>
-              <input type="text" id="lastName" placeholder="Last Name" />
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Torres" />
             </div>
         </div>
 
@@ -51,20 +51,20 @@ function SignupForm() {
             </div>
 
           <div class="input-box">
-              <label htmlFor="Course">Piano Techniques</label>
-              <input type="text" id="Course" placeholder="Course" />
+              <label htmlFor="Course">Course</label>
+              <input type="text" id="Course" placeholder="Piano Techniques" />
             </div>
 
             <div class="input-box">
-              <label htmlFor="Password">Music123</label>
-              <input type="text" id="Password" placeholder="Password" />
+              <label htmlFor="Password">Password</label>
+              <input type="text" id="Password" placeholder="Music123" />
             </div>
 
             <div class="form-login">
               <p>Already have an account? </p> <a href="login.js" class="login-link">Log in</a>
             </div>
 
-            <button class="signup">SIGN UP</button>
+            <button class="signup-button">SIGN UP</button>
         </form>
 
       </section>
