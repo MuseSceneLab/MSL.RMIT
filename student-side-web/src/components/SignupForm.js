@@ -81,6 +81,9 @@ function SignupForm() {
 
             {/* Signup button */}
             <button class="signup-button">SIGN UP</button>
+
+            {/* For demo only */}
+            <a class="signup-button" href='/home'>Demo signup</a>
         </form>
 
       </section>

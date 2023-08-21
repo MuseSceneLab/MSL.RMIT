@@ -4,7 +4,7 @@ import { LogOutIcon } from '../assets/Icons.js';
 const LogoutButton = () => {
     return (
     <>
-        <a className='logout-button' href='#'>
+        <a className='logout-button' href='/user-selection'>
             <LogOutIcon />
             Logout
         </a>

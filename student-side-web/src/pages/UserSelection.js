@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 // Import images
 import { studentIcon, professorIcon, MSLLogo } from '../assets/Icons';
 
+// Import components
+import SignupForm from '../components/SignupForm';
+
 function UserSelection() {
   const [selectedUser, setSelectedUser] = useState('');
 
@@ -11,7 +14,8 @@ function UserSelection() {
   };
 
   return (
-    <div className="bg">
+    <>
+    <div className={selectedUser === '' ? 'bg' : 'collapse'}>
       <div className="center-box">
         <div className="icon">
           <img src={MSLLogo} alt="My Icon" className="icon-img" />
@@ -29,6 +33,11 @@ function UserSelection() {
         </div>
       </div>
     </div>
+
+    <div className={selectedUser === 'student' ? '' : 'collapse'}>
+      <SignupForm />
+    </div>
+    </>
   );
 }
 
