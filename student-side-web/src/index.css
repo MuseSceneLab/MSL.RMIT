@@ -276,11 +276,13 @@ code {
 .signup-form {
   background: rgb(79,47,138);
   background: linear-gradient(45deg, rgba(79,47,138,1) 0%, rgba(147,84,194,1) 50%, rgba(79,47,138,1) 100%);
-  width: 100vw;
   padding-bottom: 10vh;
+  height: 150%;
+  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
 }
 
 .form-logo {
