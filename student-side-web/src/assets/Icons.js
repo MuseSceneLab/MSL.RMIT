@@ -68,3 +68,7 @@ export const dropDownIcon = () => {
 }
 
 export const noResultsIcon = require('./no-results.png');
+
+export const studentIcon = require('./Student.png');
+
+export const professorIcon = require('./Prof.png');
