@@ -58,7 +58,7 @@ const Home = () => {
                 Your Statistics
             </div>
             <div className='your-statistics-description'>
-                Choose the song and exercise to display tje metrics of your performance
+                Choose the song and exercise to display the metrics of your performance
             </div>
         </div>
 
