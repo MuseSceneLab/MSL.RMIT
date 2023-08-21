@@ -4,7 +4,7 @@ import '../index.css';
 function SignupForm() {
   return (
     /* Start of Container */
-  <div className="SignupForm">
+  <div className="signup-form">
     <div className="form-box">
       <img /* Image */
         className="form-logo"
@@ -25,8 +25,8 @@ function SignupForm() {
         </div>
 
             <div class="input-box">
-              <label htmlFor="email">dayana@example.com</label>
-              <input type="text" id="email" placeholder="email" />
+              <label htmlFor="email">Email</label>
+              <input type="text" id="email" placeholder="dayana@example.com" />
             </div>
 
           {/* Same occurence as above with column box but with select types*/}
@@ -39,7 +39,7 @@ function SignupForm() {
                     </select>
                 </div>
             </div>
-          
+
                 <div class="input-box">
                   <label htmlFor="instrument">Instrument</label>
                   <div class="form-select-box">
@@ -49,7 +49,7 @@ function SignupForm() {
                   </div>
                 </div>
             </div>
-        
+
           <div class="input-box">
               <label htmlFor="Course">Piano Techniques</label>
               <input type="text" id="Course" placeholder="Course" />
@@ -66,7 +66,7 @@ function SignupForm() {
 
             <button class="signup">SIGN UP</button>
         </form>
-        
+
       </section>
     </div>
   </div>
