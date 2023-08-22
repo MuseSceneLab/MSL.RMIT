@@ -1,69 +1,52 @@
 import React, { useState } from 'react';
-import './index.css';
+import MSLLogo from '../assets/Logo.png';
+import '../index.css';
 
-function LandingPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function LoginForm() {
   const [rememberMe, setRememberMe] = useState(false);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleRememberMeChange = (e) => {
-    setRememberMe(e.target.checked);
-  };
-
-  const handleLogin = () => {
-    // Implement your login logic here
-    console.log('Login button clicked');
+  const handleRememberMeChange = () => {
+    setRememberMe(!rememberMe);
   };
 
   return (
-    <div className="bg">
-      <div className="center-box">
-        <div className="icon">
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="My Icon" className="icon-img" />
-        </div>
-        <p className="email-text">Email</p>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={handleEmailChange}
-          className="email-input"
+    <div className="signup-form">
+      <div className="form-box">
+        <img
+          className="form-logo"
+          src={MSLLogo}
+          alt="Logo"
         />
-        <p className="password-text">Password</p>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={handlePasswordChange}
-          className="password-input"
-        />
-        <div className="remember-me">
-          <input
-            type="checkbox"
-            checked={rememberMe}
-            onChange={handleRememberMeChange}
-            id="rememberMe"
-          />
-          <label htmlFor="rememberMe">Remember Me</label>
-        </div>
-        <p className="sign-up-text">Don't have an account? <a href="#">Sign Up</a></p>
-        <div className="forgot-password">
-          <button className="forgot-password-button">Forgot Password</button>
-        </div>
-        <div className="login-button">
-          <button onClick={handleLogin} className="login-button">LOG IN</button>
-        </div>
+
+        <section className="form-container">
+          <form action="#" className="form">
+            <div className="input-box">
+              <label htmlFor="email">Email</label>
+              <input type="text" id="email" placeholder="Enter your email" />
+            </div>
+
+            <div className="input-box">
+              <label htmlFor="Password">Password</label>
+              <input type="password" id="Password" placeholder="Enter your password" />
+            </div>
+
+            <div className="input-box remember-me">
+              <label htmlFor="rememberMe" className="remember-me-label">
+                <input type="checkbox" id="rememberMe" />
+                Remember Me
+              </label>
+            </div>
+
+            <div className="form-login">
+              <p>Don't have an account? </p> <a href="/student-signup" className="login-link">Sign up</a>
+            </div>
+
+            <button className="signup-button">LOG IN</button>
+          </form>
+        </section>
       </div>
     </div>
   );
 }
 
-export default LandingPage;
+export default LoginForm;

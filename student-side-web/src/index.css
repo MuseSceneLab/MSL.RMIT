@@ -456,3 +456,19 @@ code {
     padding-left: calc(1.5rem - 5px);
   }
 }
+
+/* Sign In */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.remember-me-label {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 10px;
+}
+
+.remember-me-checkbox {
+  margin-right: 5px; /* Add some spacing between the checkbox and text */
+}
