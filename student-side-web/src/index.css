@@ -200,7 +200,8 @@ code {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  width: 80%
+  width: 80%;
+  gap: 10px;
 }
 
 .your-statistics-form select {
