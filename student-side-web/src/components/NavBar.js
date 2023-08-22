@@ -14,22 +14,22 @@ const NavBar = () => {
         <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
 
         <div className='nav-bar d-flex flex-column'>
-            <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/home'>
+            <a className={location === '/student-home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/student-home'>
                 <HomeIcon />
                 Home
             </a>
 
-            <a className={location === '/studio' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/studio'>
+            <a className={location === '/student-studio' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/student-studio'>
                 <StudioIcon />
                 Studio
             </a>
 
-            <a className={location === '/inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/inbox'>
+            <a className={location === '/student-inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/student-inbox'>
                 <InboxIcon />
                 Inbox
             </a>
 
-            <a className={location === '/library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/library'>
+            <a className={location === '/student-library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/student-library'>
                 <LibraryIcon />
                 Library
             </a>

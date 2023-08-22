@@ -7,6 +7,8 @@ import Library from '../pages/Library';
 import NavBar from '../components/NavBar';
 import UserSelection from '../pages/UserSelection';
 import Landing from '../pages/Landing';
+import LoginForm from '../components/LoginForm';
+import SignupForm from '../components/SignupForm';
 
 
 const AppRouter = () => {
@@ -26,10 +28,12 @@ const AppRouter = () => {
                 <Routes>
                     <Route path='/' element={<Landing />} />
                     <Route path='/user-selection' element={<UserSelection />} />
-                    <Route path='/home' element={<Home />} />
-                    <Route path='/studio' element={<Studio />} />
-                    <Route path='/inbox' element={<Inbox />} />
-                    <Route path='/library' element={<Library />} />
+                    <Route path='/student-home' element={<Home />} />
+                    <Route path='/student-studio' element={<Studio />} />
+                    <Route path='/student-inbox' element={<Inbox />} />
+                    <Route path='/student-library' element={<Library />} />
+                    <Route path='/student-login' element={<LoginForm />} />
+                    <Route path='/student-signup' element={<SignupForm />} />
                 </Routes>
             </Router>
         </>

@@ -76,14 +76,14 @@ function SignupForm() {
 
           {/* Logout button */}
             <div class="form-login">
-              <p>Already have an account? </p> <a href="login.js" class="login-link">Log in</a>
+              <p>Already have an account? </p> <a href="/student-login" class="login-link">Log in</a>
             </div>
 
             {/* Signup button */}
             <button class="signup-button">SIGN UP</button>
 
             {/* For demo only */}
-            <a class="signup-button" href='/home'>Demo signup</a>
+            <a class="signup-button" href='/student-home'>Demo signup</a>
         </form>
 
       </section>
