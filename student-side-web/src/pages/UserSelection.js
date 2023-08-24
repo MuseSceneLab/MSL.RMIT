@@ -22,7 +22,7 @@ function UserSelection() {
           <p className="center-text">Choose your User:</p>
           <div className="user-options">
             <div className="user-options-container">
-              <a className="user-option" href="/student-signup">
+              <a className="user-option" href="/signup">
                 <img src={studentIcon} alt="Student Icon" />
               </a>
               <div className="user-option">

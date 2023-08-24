@@ -27,6 +27,10 @@ code {
   --colour-placeholder-grey: rgb(123 118 129);
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Navigation Bar */
 
 .nav-bar-item {
@@ -119,13 +123,14 @@ code {
 
 /* Home Page */
 
-.home-page {
+.page {
   padding-left: calc(150px + 2rem);
   padding-right: 2rem;
   padding-top: 3rem;
 }
 
-.home-top-row {
+.top-row {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -442,6 +447,40 @@ code {
 .user-option img {
   width: 100%;
   border-radius: 1rem 1rem 0 0;
+}
+
+/* Settings */
+.user-icon {
+  margin-right: 1rem;
+}
+
+.settings-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.categories div {
+  width: 100%;
+  border-radius: 10px;
+  border: var(--colour-black) solid 1px;;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.category {
+  background-color: var(--colour-white);
+}
+
+.category-selected {
+  background-color: var(--colour-orange);
 }
 
 /* Animations */

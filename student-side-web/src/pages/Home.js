@@ -10,8 +10,8 @@ const Home = () => {
 
 
     return (
-    <div className="home-page">
-        <div className="home-top-row d-flex">
+    <div className="page">
+        <div className="top-row">
             <GreetingHeading heading='Welcome {Student Name}' />
             <SettingsButton />
         </div>
