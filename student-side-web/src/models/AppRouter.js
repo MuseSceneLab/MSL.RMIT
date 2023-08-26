@@ -19,6 +19,7 @@ const AppRouter = () => {
     return (
         <>
             <Router>
+                {/* Only shows Nav Bar under these URLs */}
                 <div className={location === '/home' ||
                                 location === '/studio' ||
                                 location === '/inbox' ||

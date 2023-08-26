@@ -4,8 +4,10 @@ import LogoutButton from './LogoutButton.js';
 
 const NavBar = () => {
 
+    // Get current url location
     const location = window.location.pathname;
 
+    // useEffect for updating location
     useEffect(() => {}, [location]);
 
     return (

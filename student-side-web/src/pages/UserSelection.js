@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 // Import images
 import { studentIcon, professorIcon, MSLLogo } from '../assets/Icons';
 
-// Import components
-import SignupForm from '../components/SignupForm';
+// For local storage
+const USER_ROLE_KEY = 'userRole';
 
 function UserSelection() {
-  const [selectedUser, setSelectedUser] = useState('');
 
-  const handleUserSelection = (user) => {
-    setSelectedUser(user);
-  };
+  // Function for setting user role in local storage
+  const setRole = (role) => {
+    localStorage.setItem(USER_ROLE_KEY, role);
+  }
 
   return (
     <>
@@ -22,11 +22,11 @@ function UserSelection() {
           <p className="center-text">Choose your User:</p>
           <div className="user-options">
             <div className="user-options-container">
-              <a className="user-option" href="/signup">
+              <a className="user-option" href="/signup" onClick={() => setRole("Student")}>
                 <img src={studentIcon} alt="Student Icon" />
               </a>
               <div className="user-option">
-                <img src={professorIcon} alt="Professor Icon" />
+                <img src={professorIcon} alt="Professor Icon" onClick={() => setRole("Professor")} />
               </div>
             </div>
           </div>
