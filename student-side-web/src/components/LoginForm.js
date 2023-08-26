@@ -30,15 +30,24 @@ function LoginForm() {
               <input type="password" id="Password" placeholder="Enter your password" />
             </div>
 
-            <div className="input-box remember-me">
-              <label htmlFor="rememberMe" className="remember-me-label">
-                <input type="checkbox" id="rememberMe" />
-                Remember Me
-              </label>
-            </div>
+           <div className="row-container">
+             <div className="remember-me">
+               <div className="checkbox-container">
+                 <input type="checkbox" id="rememberMe" className="remember-me-checkbox" />
+               </div>
+               <div className="text-container">
+                 <label htmlFor="rememberMe" className="remember-me-label">
+                   Remember Me
+                 </label>
+               </div>
+             </div>
+             <div className="form-login">
+               <p>Don't have an account? <a href="/student-signup" className="login-link">Sign up</a></p>
+             </div>
+           </div>
 
             <div className="form-login">
-              <p>Don't have an account? </p> <a href="/student-signup" className="login-link">Sign up</a>
+                <p> </p> <a href="/student-signup" className="login-link">Forgot Password?</a>
             </div>
 
             <button className="signup-button">LOG IN</button>
