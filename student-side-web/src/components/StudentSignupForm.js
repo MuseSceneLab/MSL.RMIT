@@ -76,7 +76,7 @@ function StudentSignupForm() {
 
           {/* Logout button */}
             <div className="form-login">
-              <p>Already have an account? </p> <a href="/login" className="login-link">Log in</a>
+              <a href="/login" className="login-link right-align">Already have an account? Log in</a>
             </div>
 
             {/* Signup button */}
