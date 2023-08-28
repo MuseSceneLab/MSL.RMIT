@@ -357,8 +357,7 @@ code {
 
 .form-login {
   display: flex;
-  width: 100%;
-  justify-content: right;
+  justify-content: space-between; /* Use 'space-between' to separate items */
   color: var(--colour-settings-grey);
   margin-top: 30px;
   font-weight: 600;
@@ -464,23 +463,6 @@ code {
   justify-content: space-between;
 }
 
-.remember-me {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  white-space: nowrap;
-}
-
-.remember-me-label {
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  margin-left: 10px;
-}
-
-.remember-me-checkbox {
-    border: 2px solid white; /* Add a white border */
-    background-color: transparent; /* Set the background color to transparent */
-}
 
 .forgot-password {
 }

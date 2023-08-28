@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MSLLogo from '../assets/Logo.png';
 import '../index.css';
 
 function LoginForm() {
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleRememberMeChange = () => {
-    setRememberMe(!rememberMe);
-  };
-
   return (
     <div className="signup-form">
       <div className="form-box">
@@ -30,24 +24,9 @@ function LoginForm() {
               <input type="password" id="Password" placeholder="Enter your password" />
             </div>
 
-           <div className="row-container">
-             <div className="remember-me">
-               <div className="checkbox-container">
-                 <input type="checkbox" id="rememberMe" className="remember-me-checkbox" />
-               </div>
-               <div className="text-container">
-                 <label htmlFor="rememberMe" className="remember-me-label">
-                   Remember Me
-                 </label>
-               </div>
-             </div>
-             <div className="form-login">
-               <p>Don't have an account? <a href="/student-signup" className="login-link">Sign up</a></p>
-             </div>
-           </div>
-
             <div className="form-login">
-                <p> </p> <a href="/student-signup" className="login-link">Forgot Password?</a>
+              <p><a href="/student-signup" className="login-link">Sign up</a></p>
+              <p><a href="/student-signup" className="login-link">Forgot your password?</a></p>
             </div>
 
             <button className="signup-button">LOG IN</button>
