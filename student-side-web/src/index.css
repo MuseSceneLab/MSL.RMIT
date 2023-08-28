@@ -716,3 +716,11 @@ input[type="radio"]:checked::before {
 
 .forgot-password {
 }
+
+.professor-login {
+  margin-top: 10px;
+}
+
+.professor-signup {
+  margin-top: 10px;
+}
