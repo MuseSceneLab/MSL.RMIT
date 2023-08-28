@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+thick-hr {
+  border: 2px solid var(--colour-black);
+}
+
 /* Navigation Bar */
 
 .nav-bar-item {
@@ -691,6 +695,39 @@ input[type="radio"]:checked::before {
   width: 250px;
   text-align: start;
   font-weight: 700;
+}
+
+/* FAQ */
+
+.faq-categories {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2rem;
+  gap: 1rem;
+}
+
+.faq-category {
+  width: 30%;
+  position: relative;
+}
+
+.faq-category > img {
+  width: 100%;
+}
+
+summary {list-style: none}
+summary::-webkit-details-marker {display: none; }
+
+.faq-topic-details .faq-topic-summary::after { 
+  content:url(./assets/arrow-down.svg);
+  position: absolute;
+  right: 5%;
+  scale: 0.5;
+}
+
+/* By using [open] we can define different styles when the disclosure widget is open */
+.faq-topic-details[open] .faq-topic-summary::after { 
+  content:url(./assets/arrow-down.svg);
 }
 
 /* Animations */
