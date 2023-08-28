@@ -7,7 +7,7 @@ import Library from '../pages/Library';
 import NavBar from '../components/NavBar';
 import UserSelection from '../pages/UserSelection';
 import Landing from '../pages/Landing';
-import LoginForm from '../components/LoginForm';
+import StudentLoginForm from '../components/StudentLoginForm';
 import SignupForm from '../components/SignupForm';
 import Settings from '../pages/Settings';
 

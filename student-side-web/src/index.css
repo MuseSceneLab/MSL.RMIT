@@ -363,8 +363,7 @@ a {
 
 .form-login {
   display: flex;
-  width: 100%;
-  justify-content: right;
+  justify-content: space-between; /* Use 'space-between' to separate items */
   color: var(--colour-settings-grey);
   margin-top: 30px;
   font-weight: 600;
@@ -633,4 +632,15 @@ input[type="radio"]:checked::before {
     border-left: var(--colour-hot-pink) solid 5px;
     padding-left: calc(1.5rem - 5px);
   }
+}
+
+/* Sign In */
+.row-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.forgot-password {
 }
