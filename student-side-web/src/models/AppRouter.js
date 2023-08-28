@@ -7,8 +7,9 @@ import Library from '../pages/Library';
 import NavBar from '../components/NavBar';
 import UserSelection from '../pages/UserSelection';
 import Landing from '../pages/Landing';
-import LoginForm from '../components/LoginForm';
-import SignupForm from '../components/SignupForm';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import Settings from '../pages/Settings';
 
 
 const AppRouter = () => {
@@ -18,22 +19,26 @@ const AppRouter = () => {
     return (
         <>
             <Router>
+                {/* Only shows Nav Bar under these URLs */}
                 <div className={location === '/home' ||
                                 location === '/studio' ||
                                 location === '/inbox' ||
-                                location === '/library'
+                                location === '/library' ||
+                                location === '/settings'
                                 ? '' : 'collapse'}>
                     <NavBar />
                 </div>
                 <Routes>
                     <Route path='/' element={<Landing />} />
                     <Route path='/user-selection' element={<UserSelection />} />
-                    <Route path='/student-home' element={<Home />} />
-                    <Route path='/student-studio' element={<Studio />} />
-                    <Route path='/student-inbox' element={<Inbox />} />
-                    <Route path='/student-library' element={<Library />} />
-                    <Route path='/student-login' element={<LoginForm />} />
-                    <Route path='/student-signup' element={<SignupForm />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route path='/studio' element={<Studio />} />
+                    <Route path='/inbox' element={<Inbox />} />
+                    <Route path='/library' element={<Library />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/settings' element={<Settings />} />
+                    <Route path='*' element={<Landing />} />
                 </Routes>
             </Router>
         </>

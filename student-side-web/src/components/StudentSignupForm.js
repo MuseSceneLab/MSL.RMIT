@@ -1,7 +1,7 @@
 import MSLLogo from '../assets/Logo.png';
 import '../index.css';
 
-function SignupForm() {
+function StudentSignupForm() {
   return (
     /* Start of Container */
   <div className="signup-form">
@@ -12,32 +12,32 @@ function SignupForm() {
       />
 
       {/* Form Container */}
-      <section class="form-container">
-        <form action="#" class="form">
+      <section className="form-container">
+        <form action="#" className="form">
         {/* First/surname input boxes wrapped in column container for 1x2 display */}
-        <div class="column"> 
-          <div class="input-box">
+        <div className="column"> 
+          <div className="input-box">
               <label htmlFor="firstName">First Name</label>
               <input type="text" id="firstName" placeholder="Dayana" />
           </div>
 
-            <div class="input-box">
+            <div className="input-box">
               <label htmlFor="lastName">Last Name</label>
               <input type="text" id="lastName" placeholder="Torres" />
             </div>
         </div>
 
         {/* Email input box*/}
-            <div class="input-box">
+            <div className="input-box">
               <label htmlFor="email">Email</label>
               <input type="text" id="email" placeholder="dayana@example.com" />
             </div>
 
           {/* Select boxes wrapped in column container for 1x2 display */}
-          <div class="column">
-            <div class="input-box">
+          <div className="column">
+            <div className="input-box">
               <label htmlFor="school">School</label>
-                  <div class="form-select-box">
+                  <div className="form-select-box">
                     <select>
                       <option>Berklee College of Music</option>
                       <option>The Royal Academy of Music</option>
@@ -47,9 +47,9 @@ function SignupForm() {
                 </div>
             </div>
 
-                <div class="input-box">
+                <div className="input-box">
                   <label htmlFor="instrument">Instrument</label>
-                  <div class="form-select-box">
+                  <div className="form-select-box">
                     <select>
                       <option>Piano</option>
                       <option>Trombone</option>
@@ -63,27 +63,27 @@ function SignupForm() {
             </div>
 
           {/* Course input box*/}
-          <div class="input-box">
+          <div className="input-box">
               <label htmlFor="Course">Course</label>
               <input type="text" id="Course" placeholder="Piano Techniques" />
             </div>
 
           {/* Password input box*/}
-            <div class="input-box">
+            <div className="input-box">
               <label htmlFor="Password">Password</label>
               <input type="text" id="Password" placeholder="Music123" />
             </div>
 
           {/* Logout button */}
-            <div class="form-login">
-              <p>Already have an account? </p> <a href="/student-login" class="login-link">Log in</a>
+            <div className="form-login">
+              <p>Already have an account? </p> <a href="/login" className="login-link">Log in</a>
             </div>
 
             {/* Signup button */}
-            <button class="signup-button">SIGN UP</button>
+            <button className="signup-button">SIGN UP</button>
 
             {/* For demo only */}
-            <a class="signup-button" href='/student-home'>Demo signup</a>
+            <a className="signup-button" href='/home'>Demo signup</a>
         </form>
 
       </section>
@@ -92,4 +92,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm;
+export default StudentSignupForm;
