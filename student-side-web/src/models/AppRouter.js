@@ -10,6 +10,7 @@ import Landing from '../pages/Landing';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
+import FAQ from '../pages/FAQ';
 
 
 const AppRouter = () => {
@@ -24,7 +25,8 @@ const AppRouter = () => {
                                 location === '/studio' ||
                                 location === '/inbox' ||
                                 location === '/library' ||
-                                location === '/settings'
+                                location === '/settings' ||
+                                location === '/faq'
                                 ? '' : 'collapse'}>
                     <NavBar />
                 </div>
@@ -35,6 +37,7 @@ const AppRouter = () => {
                     <Route path='/studio' element={<Studio />} />
                     <Route path='/inbox' element={<Inbox />} />
                     <Route path='/library' element={<Library />} />
+                    <Route path='/faq' element={<FAQ />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                     <Route path='/settings' element={<Settings />} />

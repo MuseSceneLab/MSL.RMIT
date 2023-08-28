@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo } from '../assets/Icons.js';
+import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo, FAQIcon } from '../assets/Icons.js';
 import LogoutButton from './LogoutButton.js';
 
 const NavBar = () => {
@@ -34,6 +34,11 @@ const NavBar = () => {
             <a className={location === '/library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/library'>
                 <LibraryIcon />
                 Library
+            </a>
+
+            <a className={location === '/faq' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/faq'>
+                <FAQIcon />
+                Help
             </a>
         </div>
 
