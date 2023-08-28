@@ -7,7 +7,7 @@ import Library from '../pages/Library';
 import NavBar from '../components/NavBar';
 import UserSelection from '../pages/UserSelection';
 import Landing from '../pages/Landing';
-import LoginForm from '../components/LoginForm';
+import StudentLoginForm from '../components/StudentLoginForm';
 import SignupForm from '../components/SignupForm';
 
 
@@ -32,7 +32,7 @@ const AppRouter = () => {
                     <Route path='/student-studio' element={<Studio />} />
                     <Route path='/student-inbox' element={<Inbox />} />
                     <Route path='/student-library' element={<Library />} />
-                    <Route path='/student-login' element={<LoginForm />} />
+                    <Route path='/student-login' element={<StudentLoginForm />} />
                     <Route path='/student-signup' element={<SignupForm />} />
                 </Routes>
             </Router>
