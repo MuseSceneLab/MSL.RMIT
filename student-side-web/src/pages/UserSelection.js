@@ -25,9 +25,9 @@ function UserSelection() {
               <a className="user-option" href="/signup" onClick={() => setRole("Student")}>
                 <img src={studentIcon} alt="Student Icon" />
               </a>
-              <div className="user-option">
-                <img src={professorIcon} alt="Professor Icon" onClick={() => setRole("Professor")} />
-              </div>
+              <a className="user-option" href="/signup" onClick={() => setRole("Professor")}>
+                <img src={professorIcon} alt="Professor Icon" />
+              </a>
             </div>
           </div>
         </div>
