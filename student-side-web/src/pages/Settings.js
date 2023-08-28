@@ -1,6 +1,7 @@
 import GreetingHeading from "../components/GreetingHeading";
 import { userIcon } from "../assets/Icons";
 import { useEffect, useState } from "react";
+import ToggleSwitch from "../components/ToggleSwitch";
 
 const Settings = () => {
 
@@ -77,8 +78,31 @@ const Settings = () => {
                 </form>
             </div>
 
-            <div className={categorySelected === "Privacy & Security" ? "upstage-category" : "d-none"}>
-                privacy
+            <div className={categorySelected === "Privacy & Security" ? "upstage-category category-privacy" : "d-none"}>
+                <div>Review you Ad Choices and Read the Privacy Policy</div>
+                <div>Read Terms of Use</div>
+
+                <div className="privacy-settings">
+                    <div className="privacy-item">
+                        Strictly Necessary Cookies
+                        <ToggleSwitch switchStatus={true} />
+                    </div>
+
+                    <div className="privacy-item">
+                        Strictly Necessary Cookies
+                        <ToggleSwitch switchStatus={true} />
+                    </div>
+
+                    <div className="privacy-item">
+                        Strictly Necessary Cookies
+                        <ToggleSwitch switchStatus={true} />
+                    </div>
+
+                    <div className="privacy-item">
+                        Strictly Necessary Cookies
+                        <ToggleSwitch switchStatus={true} />
+                    </div>
+                </div>
             </div>
 
         </div>

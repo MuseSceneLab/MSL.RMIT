@@ -25,6 +25,7 @@ code {
   --colour-purple-grey: #3b3743;
   --colour-settings-grey: rgb(177 177 177);
   --colour-placeholder-grey: rgb(123 118 129);
+  --colour-gradient-purple: rgb(94,45,205) linear-gradient(45deg, rgba(94,45,205,1) 35%, rgba(183,100,234,1) 100%);
 }
 
 a {
@@ -497,7 +498,6 @@ a {
   background-color: var(--colour-white);
   border: var(--colour-black) solid 1px;
   margin-right: 4rem;
-  padding-top: 15%;
 }
 
 /* Select A Language */
@@ -506,6 +506,7 @@ a {
   font-weight: 700;
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 15%;
 }
 
 .select-language {
@@ -553,6 +554,73 @@ input[type="radio"]:checked {
 input[type="radio"]:checked::before {
   transform: scale(.75);
 }
+
+/* Privacy Settings */
+
+.category-privacy {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+}
+
+.privacy-item {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+}
+
+.privacy-settings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 400;
+  margin: 1rem auto;
+}
+
+/* Toggle Switch */
+.switch-container-on {
+  background: rgb(94,45,205) linear-gradient(45deg, rgba(94,45,205,1) 35%, rgba(183,100,234,1) 100%);
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.switch-toggle-on {
+  background-color: var(--colour-white);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transition: 0.2s;
+  transform: translateX(50%);
+}
+
+.switch-container-off {
+  background: var(--colour-settings-grey);
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.switch-toggle-off {
+  background-color: var(--colour-white);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  transition: 0.2s;
+  transform: translateX(-50%);
+}
+
+
 
 /* Animations */
 
