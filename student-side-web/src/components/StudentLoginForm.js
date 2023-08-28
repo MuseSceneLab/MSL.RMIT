@@ -25,8 +25,8 @@ function StudentLoginForm() {
             </div>
 
             <div className="form-login">
-              <p><a href="/student-signup" className="login-link">Sign up</a></p>
-              <p><a href="/student-signup" className="login-link">Forgot your password?</a></p>
+              <p><a href="/signup" className="login-link">Sign up</a></p>
+              <p><a href="/signup" className="login-link">Forgot your password?</a></p>
             </div>
 
             <button className="signup-button">LOG IN</button>
