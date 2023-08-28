@@ -3,11 +3,11 @@ import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
 import { noResultsIcon } from "../assets/Icons";
+import { testData } from "../data/repository";
 
 const Home = () => {
 
     const [statsResults, setStatsResults] = useState([]);
-
 
     return (
     <div className="page">
