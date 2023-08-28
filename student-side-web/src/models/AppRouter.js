@@ -7,8 +7,8 @@ import Library from '../pages/Library';
 import NavBar from '../components/NavBar';
 import UserSelection from '../pages/UserSelection';
 import Landing from '../pages/Landing';
-import StudentLoginForm from '../components/StudentLoginForm';
-import SignupForm from '../components/SignupForm';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
 
 
@@ -35,8 +35,8 @@ const AppRouter = () => {
                     <Route path='/studio' element={<Studio />} />
                     <Route path='/inbox' element={<Inbox />} />
                     <Route path='/library' element={<Library />} />
-                    <Route path='/login' element={<LoginForm />} />
-                    <Route path='/signup' element={<SignupForm />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
                     <Route path='/settings' element={<Settings />} />
                     <Route path='*' element={<Landing />} />
                 </Routes>
