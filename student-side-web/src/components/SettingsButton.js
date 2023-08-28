@@ -3,12 +3,12 @@ import { SettingsIcon } from '../assets/Icons';
 
 const SettingsButton = () => {
     return (
-    <div>
+    <a href='/settings'>
         <div className='settings-button'>
             <SettingsIcon />
             Settings
         </div>
-    </div>
+    </a>
     )
 }
 

@@ -72,3 +72,5 @@ export const noResultsIcon = require('./no-results.png');
 export const studentIcon = require('./Student.png');
 
 export const professorIcon = require('./Prof.png');
+
+export const userIcon = require('./User.png');
