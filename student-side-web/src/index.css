@@ -717,7 +717,12 @@ input[type="radio"]:checked::before {
   width: 100%;
 }
 
-summary {list-style: none}
+summary {
+  list-style: none; 
+  font-size: 1.25rem; 
+  font-weight: 700;
+}
+
 summary::-webkit-details-marker {display: none; }
 
 .faq-topic-details .faq-topic-summary::after { 
