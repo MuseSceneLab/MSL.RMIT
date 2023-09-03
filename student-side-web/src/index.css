@@ -727,6 +727,25 @@ summary::-webkit-details-marker {display: none; }
   scale: 0.5;
 }
 
+.faq-container {
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -2rem;
+}
+
+.answer {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* By using [open] we can define different styles when the disclosure widget is open */
 .faq-topic-details[open] .faq-topic-summary::after { 
   content:url(./assets/arrow-down.svg);
