@@ -717,7 +717,12 @@ input[type="radio"]:checked::before {
   width: 100%;
 }
 
-summary {list-style: none}
+summary {
+  list-style: none; 
+  font-size: 1.25rem; 
+  font-weight: 700;
+}
+
 summary::-webkit-details-marker {display: none; }
 
 .faq-topic-details .faq-topic-summary::after { 
@@ -725,6 +730,25 @@ summary::-webkit-details-marker {display: none; }
   position: absolute;
   right: 5%;
   scale: 0.5;
+}
+
+.faq-container {
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -2rem;
+}
+
+.answer {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* By using [open] we can define different styles when the disclosure widget is open */
