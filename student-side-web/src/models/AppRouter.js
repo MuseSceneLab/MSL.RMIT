@@ -13,6 +13,7 @@ import Settings from '../pages/Settings';
 import FAQ from '../pages/FAQ';
 import Students from '../pages/Students';
 import Assignments from '../pages/Assignments';
+import Gallery from '../pages/Gallery';
 
 
 
@@ -31,6 +32,7 @@ const AppRouter = () => {
                                 location === '/settings' ||
                                 location === '/students' ||
                                 location === '/assignments' ||
+                                location === '/gallery' ||
                                 location === '/faq'
                                 ? '' : 'collapse'}>
                     <NavBar />
@@ -48,6 +50,7 @@ const AppRouter = () => {
                     <Route path='/settings' element={<Settings />} />
                     <Route path='/students' element={<Students />} />
                     <Route path='/assignments' element={<Assignments />} />
+                    <Route path='/gallery' element={<Gallery />} />
                     <Route path='*' element={<Landing />} />
                 </Routes>
             </Router>

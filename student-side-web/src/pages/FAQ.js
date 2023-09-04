@@ -87,7 +87,7 @@ const FAQ = () => {
             <details className="faq-topic-details">
                 <summary className="faq-topic-summary">Security and Privacy</summary>
                 <ul className="question">How is the security and privacy of my data handled?
-                    <li className="answer">For more information, please consult our <a rel="noreferrer" href="https://chat.openai.com/auth/login?next=%2Fc%2F8fa36703-c71b-4294-af50-152bcdf1ce77" target="_blank">Privacy and Data Handling Policy</a>.</li>
+                    <li className="answer">For more information, please consult our <a rel="noreferrer" href="https://musescenelab.com/privacidad-datos/" target="_blank">Privacy and Data Handling Policy</a>.</li>
                 </ul>
             </details>
 

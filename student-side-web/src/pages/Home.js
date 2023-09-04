@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
@@ -9,6 +9,18 @@ const Home = () => {
 
     // Get user role
     const userRole = localStorage.getItem('userRole');
+    // const [schools, setSchools] = useState([]);
+    // const data = testData();
+    // useEffect(() => {
+    //     const loadSchools = async () => {
+    //         const schools = await data;
+    //         setSchools(schools.map(school => <div>{school.schoolName}<br/></div>));
+    //     }
+    //     loadSchools();
+    // }, []);
+
+    // console.log(schools);
+
 
     // state variable for selecting from professor's classes
     const [selectedClass, setSelectedClass] = useState('');
@@ -17,9 +29,10 @@ const Home = () => {
         setSelectedClass(classCode);
     }
 
-    return ( userRole === 'student' ?
+    return ( userRole === 'Student' ?
     <div className="page">
         <div className="top-row">
+            {/* <div>{schools}</div> */}
             <GreetingHeading heading='Welcome {Student Name}' />
             <SettingsButton />
         </div>
