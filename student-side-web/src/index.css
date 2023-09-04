@@ -1045,3 +1045,76 @@ summary::-webkit-details-marker {display: none; }
 .student-content {
     margin-top: auto; /* Push content to the bottom */
 }
+
+/* Assignments - Professor */
+
+.search-row {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.search-input {
+    width: 350px; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid black; /* Set the border to black */
+    margin-right: 10px; /* Spacing between search input and tabs */
+    margin-top: 40px;
+}
+
+.tab-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Position tabs to the right */
+    margin-left: auto; /* Push the tab container to the right */
+}
+
+.tab {
+    height: 40px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid black; /* Set the border to black */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Add padding for spacing between tabs */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.tab.active {
+    background-color: gray; /* Change the background color upon clicking */
+    color: white;
+}
+
+.line {
+    border-top: 4px solid black; /* Set the border color to black */
+    margin-top: 20px; /* Adjust the margin to control the spacing above the line */
+}
+
+.expandable-row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+    transition: background-color 0.3s;
+}
+
+.expandable-row:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+}
+
+.expanded-content {
+    display: none; /* Initially hidden */
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.expanded-content.active {
+    display: block; /* Display when expanded */
+}
