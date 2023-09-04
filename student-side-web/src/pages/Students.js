@@ -3,6 +3,7 @@ import GreetingHeading from "../components/GreetingHeading";
 import { UserIcon, categoryTitle } from "../assets/Icons.js";
 import '../index.css';
 import FilterIcon from '../assets/filter.svg';
+import '../index.css';
 
 const Students = () => {
     const userRole = localStorage.getItem('userRole');
@@ -75,7 +76,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>First Name Last Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>First Name Last Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -92,7 +96,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>Last Name, First Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>Last Name, First Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -109,7 +116,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>First Name Last Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>First Name Last Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -126,7 +136,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>First Name Last Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>First Name Last Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -143,7 +156,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>First Name Last Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>First Name Last Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -160,7 +176,10 @@ const Students = () => {
                                 {Array.from({ length: 6 }, (_, index) => (
                                     <div key={index} className="student-box">
                                         {/* Student box content */}
-                                        <p>First Name Last Name</p>
+                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
+                                        <div className="student-content">
+                                            <p>First Name Last Name</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
