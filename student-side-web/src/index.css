@@ -958,3 +958,90 @@ summary::-webkit-details-marker {display: none; }
 
 .forgot-password {
 }
+
+.professor-login {
+  margin-top: 10px;
+}
+
+.professor-signup {
+  margin-top: 10px;
+}
+
+/* Student Tab */
+
+.student-tabs-container {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+}
+
+.tab {
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.class-dropdown {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+
+}
+
+.tab.active {
+    background-color: orange;
+}
+
+.student-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.student-box {
+    position: relative; /* Add relative positioning */
+    width: 240px;
+    height: 160px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    font-size: 16px;
+    color: black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px; /* Add padding for spacing */
+}
+
+.student-box:last-child {
+    margin-right: 0;
+}
+
+.student-number {
+    position: absolute; /* Position the number absolutely */
+    top: 10px; /* Adjust top position as needed */
+    left: 10px; /* Adjust left position as needed */
+    font-size: 14px; /* You can adjust the font size as needed */
+}
+
+.student-content {
+    margin-top: auto; /* Push content to the bottom */
+}
