@@ -69,43 +69,102 @@ const Students = () => {
                 {selectedTab === 'First Name' && (
                     <div>
                         {/* Content for the "First Name" tab */}
-                        <p>This is the content for the "First Name" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>First Name Last Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
 
                 {selectedTab === 'Last Name' && (
                     <div>
                         {/* Content for the "Last Name" tab */}
-                        <p>This is the content for the "Last Name" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>Last Name, First Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
 
                 {selectedTab === 'Top' && (
                     <div>
                         {/* Content for the "Top" tab */}
-                        <p>This is the content for the "Top" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>First Name Last Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
 
                 {selectedTab === 'Bottom' && (
                     <div>
                         {/* Content for the "Bottom" tab */}
-                        <p>This is the content for the "Bottom" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>First Name Last Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
 
                 {selectedTab === 'To Grade' && (
                     <div>
                         {/* Content for the "To Grade" tab */}
-                        <p>This is the content for the "To Grade" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>First Name Last Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
 
-                {/* Filter Tab Content */}
                 {selectedTab === 'Filter' && (
                     <div>
                         {/* Content for the "Filter" tab */}
-                        <p>This is the content for the "Filter" tab.</p>
+                        {Array.from({ length: 5 }, (_, rowIndex) => (
+                            <div key={rowIndex} className="student-row">
+                                {/* Render 6 student boxes in each row */}
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <div key={index} className="student-box">
+                                        {/* Student box content */}
+                                        <p>First Name Last Name</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 )}
             </div>
