@@ -170,20 +170,7 @@ const Students = () => {
                 {selectedTab === 'Filter' && (
                     <div>
                         {/* Content for the "Filter" tab */}
-                        {Array.from({ length: 5 }, (_, rowIndex) => (
-                            <div key={rowIndex} className="student-row">
-                                {/* Render 6 student boxes in each row */}
-                                {Array.from({ length: 6 }, (_, index) => (
-                                    <div key={index} className="student-box">
-                                        {/* Student box content */}
-                                        <div className="student-number">{(rowIndex * 6) + index + 1}</div>
-                                        <div className="student-content">
-                                            <p>First Name Last Name</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
+
                     </div>
                 )}
             </div>
