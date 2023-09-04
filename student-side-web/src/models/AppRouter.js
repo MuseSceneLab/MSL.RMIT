@@ -11,6 +11,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
 import FAQ from '../pages/FAQ';
+import Students from '../pages/Students';
 
 
 const AppRouter = () => {
@@ -26,6 +27,7 @@ const AppRouter = () => {
                                 location === '/inbox' ||
                                 location === '/library' ||
                                 location === '/settings' ||
+                                location === '/students' ||
                                 location === '/faq'
                                 ? '' : 'collapse'}>
                     <NavBar />
@@ -41,6 +43,7 @@ const AppRouter = () => {
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                     <Route path='/settings' element={<Settings />} />
+                    <Route path='/students' element={<Students />} />
                     <Route path='*' element={<Landing />} />
                 </Routes>
             </Router>
