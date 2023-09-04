@@ -26,6 +26,8 @@ code {
   --colour-settings-grey: rgb(177 177 177);
   --colour-placeholder-grey: rgb(123 118 129);
   --colour-gradient-purple: rgb(94,45,205) linear-gradient(45deg, rgba(94,45,205,1) 35%, rgba(183,100,234,1) 100%);
+  --colour-bright-purple: rgb(92, 43, 204);
+  --colour-light-purple: rgb(168, 138, 229);
 }
 
 a {
@@ -58,7 +60,7 @@ thick-hr {
 }
 
 .nav-bar {
-  width: 150px; 
+  width: 160px; 
   height: 100vh;
   padding-top: 220px;
   border-right: 1px solid var(--colour-black);
@@ -77,7 +79,7 @@ thick-hr {
   width: 120px;
   position: fixed;
   top: 20px;
-  left: 15px;
+  left: 20px;
   z-index: 999;
 }
 
@@ -91,7 +93,7 @@ thick-hr {
   padding-left: 1.5rem;
   padding-top: .75rem;
   padding-bottom: .75rem;
-  width: 149px;
+  width: 159px;
   background-color: var(--colour-white);
 }
 
@@ -129,7 +131,7 @@ thick-hr {
 /* Home Page */
 
 .page {
-  padding-left: calc(150px + 2rem);
+  padding-left: calc(160px + 2rem);
   padding-right: 2rem;
   padding-top: 3rem;
 }
@@ -715,7 +717,12 @@ input[type="radio"]:checked::before {
   width: 100%;
 }
 
-summary {list-style: none}
+summary {
+  list-style: none; 
+  font-size: 1.25rem; 
+  font-weight: 700;
+}
+
 summary::-webkit-details-marker {display: none; }
 
 .faq-topic-details .faq-topic-summary::after { 
@@ -725,9 +732,207 @@ summary::-webkit-details-marker {display: none; }
   scale: 0.5;
 }
 
+.faq-container {
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -2rem;
+}
+
+.answer {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* By using [open] we can define different styles when the disclosure widget is open */
 .faq-topic-details[open] .faq-topic-summary::after { 
   content:url(./assets/arrow-down.svg);
+}
+
+/* Professor Home */
+.class-time-rehearsed-container {
+  width: 100%;
+  background-color: var(--colour-white);
+  border: var(--colour-black) solid 1px;;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.class-time-rehearsed-leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.class-time-rehearsed-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.time-rehearsed-description {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.class-time-rehearsed-rightside {
+  display: flex;
+  gap: 1rem;
+}
+
+.class-time-rehearsed-rightside-item {
+  background: var(--colour-grey);
+  border-radius: .5rem;
+  width: 8rem;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  color: var(--colour-black);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.class-time-rehearsed {
+  font-size: 1rem;
+}
+
+.professor-home-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.your-classes {
+  width: 30%;
+  background-color: var(--colour-white);
+  border-radius: 1rem;
+  border: var(--colour-black) solid 1px;
+  padding: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.class-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: .5rem;
+  margin-top: 1rem;
+  background-color: var(--colour-grey);
+  border-radius: 1rem;
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.class-title {
+  font-size: 1rem;
+}
+
+.join-hint {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--colour-placeholder-grey);
+  width: 80%;
+}
+
+.class-code {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--colour-white);
+  width: 80%;
+  color: var(--colour-bright-purple);
+}
+
+.change-code-button {
+  background-color: var(--colour-bright-purple);
+  width: 80%;
+  color: var(--colour-white);
+  font-weight: 700;
+  font-size: .9rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  cursor: pointer;
+}
+
+.selected-class {
+  background-color: var(--colour-light-purple);
+  color: var(--colour-white);
+  transition: ease-in-out .2s;
+}
+
+.selected-class > div {
+  color: var(--colour-white);
+}
+
+.selected-class > .class-code {
+  color: var(--colour-light-purple);
+}
+
+.selected-class > .change-code-button {
+  display: none;
+}
+
+.no-class-selected {
+  width: 100%;
+  background-color: var(--colour-white);
+  border-radius: 1rem;
+  border: var(--colour-black) solid 1px;;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.class-rankings {
+  width: 100%;
+}
+
+.bottom-rankings, .top-rankings {
+  width: 100%;
+  background-color: var(--colour-white);
+  border-radius: 1rem;
+  border: var(--colour-black) solid 1px;
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: start;
+  font-size: 1.25rem;
+}
+
+.bottom-rankings > table, .top-rankings > table {
+  font-size: 0.8rem;
 }
 
 /* Animations */

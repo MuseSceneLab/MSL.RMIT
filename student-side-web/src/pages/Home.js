@@ -2,14 +2,22 @@ import React from "react";
 import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
-import { noResultsIcon } from "../assets/Icons";
+import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
 import { testData } from "../data/repository";
 
 const Home = () => {
 
-    const [statsResults, setStatsResults] = useState([]);
+    // Get user role
+    const userRole = localStorage.getItem('userRole');
 
-    return (
+    // state variable for selecting from professor's classes
+    const [selectedClass, setSelectedClass] = useState('');
+
+    const handleClassChange = classCode => {
+        setSelectedClass(classCode);
+    }
+
+    return ( userRole === 'student' ?
     <div className="page">
         <div className="top-row">
             <GreetingHeading heading='Welcome {Student Name}' />
@@ -86,6 +94,112 @@ const Home = () => {
                 <img className='no-result-image' src={noResultsIcon} alt='no results' />
                 <div className='no-result-description'>Please select a song and exercise in order for us to display your metrics.</div>
             </div>
+        </div>
+    </div>
+    : 
+    <div className="page">
+        <div className="top-row">
+            <GreetingHeading heading='Welcome, Professor!' />
+            <div><UserIcon />{userRole}</div>
+        </div>
+
+        <div className="class-time-rehearsed-container">
+            <div className="class-time-rehearsed-leftside">
+                <div className="class-time-rehearsed-title">
+                    Average Class Time Rehearsed: Class Name
+                </div>
+                <div className="class-time-rehearsed-description">
+                    Here you can see the overall time rehearsed 
+                </div>
+            </div>
+
+            <div className="class-time-rehearsed-rightside">
+                <div className="class-time-rehearsed-rightside-item">
+                    TODAY
+                    <div className="class-time-rehearsed">02:14 hr</div>
+                    AVERAGE
+                </div>
+
+                <div className="class-time-rehearsed-rightside-item">
+                    WEEKLY
+                    <div className="class-time-rehearsed">12:02 hr</div>
+                    AVERAGE
+                </div>
+
+                <div className="class-time-rehearsed-rightside-item">
+                    TOTAL
+                    <div className="class-time-rehearsed">14:16 hr</div>
+                    AVERAGE
+                </div>
+            </div>
+        </div>
+
+        <div className='professor-home-content'>
+            <div className="your-classes">
+                Your Classes:
+                <div className={selectedClass === "J30DN3" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("J30DN3")}>
+                    <div className="class-title">Class Name</div>
+                    <div className="join-hint">Students can join this class with this code</div>
+                    <div className="class-code">J30DN3</div>
+                    <div className="change-code-button">CHANGE</div>
+                </div>
+                <div className={selectedClass === "JS93N8" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("JS93N8")}>
+                    <div className="class-title">Class Name</div>
+                    <div className="join-hint">Students can join this class with this code</div>
+                    <div className="class-code">JS93N8</div>
+                    <div className="change-code-button">CHANGE</div>
+                </div>
+                <div className={selectedClass === "L49FH7" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("L49FH7")}>
+                    <div className="class-title">Class Name</div>
+                    <div className="join-hint">Students can join this class with this code</div>
+                    <div className="class-code">L49FH7</div>
+                    <div className="change-code-button">CHANGE</div>
+                </div>
+            </div>
+
+            {selectedClass === "" ? 
+                <div className="no-class-selected">
+                    <div className="title">Please share code with classroom!</div>
+                    <NoStudentInClass />
+                    Once added this page wil display your students’ overall progress.
+                </div>
+            :
+                <div className="class-rankings">
+                    <div className="bottom-rankings">Bottom Rankings: Overall Evaluation
+                        <table className="bottom-rankings-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Last Change</th>
+                                <th>Intonation</th>
+                                <th>Blend</th>
+                                <th>Articulation</th>
+                                <th>Dynamics</th>
+                                <th>Tempo</th>
+                                <th>Rhythm</th>
+                                <th>Results</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div className="top-rankings">Top Rankings: Overall Evaluation
+                        <table className="bottom-rankings-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Last Change</th>
+                                <th>Intonation</th>
+                                <th>Blend</th>
+                                <th>Articulation</th>
+                                <th>Dynamics</th>
+                                <th>Tempo</th>
+                                <th>Rhythm</th>
+                                <th>Results</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            }
+
         </div>
     </div>
     )

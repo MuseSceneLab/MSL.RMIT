@@ -171,25 +171,25 @@ const Settings = () => {
                     <div className="profile-item">
                         <div className="profile-item-title">Name</div>
                         <div className={editingProfile ? "d-none" : "profile-item-description"}>Dayana</div>
-                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.name} onChange={() => editProfile(event, "name")} />
+                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.name} onChange={(event) => editProfile(event, "name")} />
                     </div>
 
                     <div className="profile-item">
                         <div className="profile-item-title">Last Name</div>
                         <div className={editingProfile ? "d-none" : "profile-item-description"}>Torres</div>
-                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.lastName} onChange={() => editProfile(event, "lastName")} />
+                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.lastName} onChange={(event) => editProfile(event, "lastName")} />
                     </div>
 
                     <div className="profile-item">
                         <div className="profile-item-title">Institution</div>
                         <div className={editingProfile ? "d-none" : "profile-item-description"}>Boston Conservatory at Berklee</div>
-                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.institution} onChange={() => editProfile(event, "institution")} />
+                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.institution} onChange={(event) => editProfile(event, "institution")} />
                     </div>
 
                     <div className="profile-item">
                         <div className="profile-item-title">Program</div>
                         <div className={editingProfile ? "d-none" : "profile-item-description"}>Master in Conducting</div>
-                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.program} onChange={() => editProfile(event, "program")} />
+                        <input type="text" className={editingProfile ? "profile-item-description" : "d-none"} placeholder={profile.program} onChange={(event) => editProfile(event, "program")} />
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@ const Settings = () => {
                         <div className="account-information-item-title">Email Address</div>
                         
                         <div className={!editingEmail ? "" : "d-none"}>{accountInformation.email}</div>
-                        <input type="text" className={editingEmail ? "" : "d-none"} placeholder={accountInformation.email} onChange={() => handleAccountInformation(event, "email")} />
+                        <input type="text" className={editingEmail ? "" : "d-none"} placeholder={accountInformation.email} onChange={(event) => handleAccountInformation(event, "email")} />
                     </div>
                     <div className={!editingEmail ? "account-information-item-right" : "d-none"} onClick={editEmail}>
                         <EditIcon />
@@ -215,7 +215,7 @@ const Settings = () => {
                         <div className="account-information-item-title">Password</div>
 
                         <div className={!editingPassword ? "": "d-none"}>{accountInformation.password}</div>
-                        <input type="text" className={editingPassword ? "" : "d-none"} placeholder={accountInformation.password} onChange={() => handleAccountInformation(event, "password")} />
+                        <input type="text" className={editingPassword ? "" : "d-none"} placeholder={accountInformation.password} onChange={(event) => handleAccountInformation(event, "password")} />
                     </div>
                     <div className={!editingPassword ? "account-information-item-right" : "d-none"} onClick={editPassword}>
                         <EditIcon />
@@ -230,7 +230,7 @@ const Settings = () => {
                         <div className="account-information-item-title">Username</div>
 
                         <div className={!editingUsername ? "" : "d-none"}>{accountInformation.username}</div>
-                        <input type="text" className={editingUsername ? "" : "d-none"} placeholder={accountInformation.username} onChange={() => handleAccountInformation(event, "username")} />
+                        <input type="text" className={editingUsername ? "" : "d-none"} placeholder={accountInformation.username} onChange={(event) => handleAccountInformation(event, "username")} />
                     </div>
                     <div className={!editingUsername ? "account-information-item-right" : "d-none"} onClick={editUsername}>
                         <EditIcon />
