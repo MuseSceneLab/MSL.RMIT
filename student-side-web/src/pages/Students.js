@@ -3,7 +3,6 @@ import GreetingHeading from "../components/GreetingHeading";
 import { UserIcon, categoryTitle } from "../assets/Icons.js";
 import '../index.css';
 import FilterIcon from '../assets/filter.svg';
-import '../index.css';
 
 const Students = () => {
     const userRole = localStorage.getItem('userRole');
