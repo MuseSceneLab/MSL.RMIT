@@ -1020,7 +1020,7 @@ summary::-webkit-details-marker {display: none; }
     height: 160px;
     background-color: transparent;
     border: 1px solid black;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column; /* Stack content vertically */
     align-items: center;
