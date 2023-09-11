@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import GreetingHeading from "../components/GreetingHeading";
-import { UserIcon } from "../assets/Icons.js";
+import { SettingsIcon, UserIcon } from "../assets/Icons.js";
 import '../index.css';
+import SettingsButton from '../components/SettingsButton';
 
 const Assignments = () => {
     const userRole = localStorage.getItem('userRole');
@@ -34,7 +35,7 @@ const Assignments = () => {
         <div className="page">
             <div className="top-row">
                 <GreetingHeading heading={`Welcome back, ${userRole}!`} />
-                <div><UserIcon />{userRole}</div>
+                <SettingsButton />
             </div>
             <div className="search-row">
                 <input

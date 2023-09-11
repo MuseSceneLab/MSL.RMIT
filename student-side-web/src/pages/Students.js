@@ -3,6 +3,7 @@ import GreetingHeading from "../components/GreetingHeading";
 import { UserIcon, categoryTitle } from "../assets/Icons.js";
 import '../index.css';
 import FilterIcon from '../assets/filter.svg';
+import SettingsButton from '../components/SettingsButton';
 
 const Students = () => {
     const userRole = localStorage.getItem('userRole');
@@ -16,7 +17,7 @@ const Students = () => {
         <div className="page">
             <div className="top-row">
                 <GreetingHeading heading='Students Tab' />
-                <div><UserIcon />{userRole}</div>
+                <SettingsButton />
             </div>
 
             <div className="student-tabs-container">

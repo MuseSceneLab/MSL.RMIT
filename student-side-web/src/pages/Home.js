@@ -113,7 +113,7 @@ const Home = () => {
     <div className="page">
         <div className="top-row">
             <GreetingHeading heading='Welcome, Professor!' />
-            <div><UserIcon />{userRole}</div>
+            <SettingsButton />
         </div>
 
         <div className="class-time-rehearsed-container">
@@ -149,24 +149,26 @@ const Home = () => {
 
         <div className='professor-home-content'>
             <div className="your-classes">
-                Your Classes:
-                <div className={selectedClass === "J30DN3" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("J30DN3")}>
-                    <div className="class-title">Class Name</div>
-                    <div className="join-hint">Students can join this class with this code</div>
-                    <div className="class-code">J30DN3</div>
-                    <div className="change-code-button">CHANGE</div>
-                </div>
-                <div className={selectedClass === "JS93N8" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("JS93N8")}>
-                    <div className="class-title">Class Name</div>
-                    <div className="join-hint">Students can join this class with this code</div>
-                    <div className="class-code">JS93N8</div>
-                    <div className="change-code-button">CHANGE</div>
-                </div>
-                <div className={selectedClass === "L49FH7" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("L49FH7")}>
-                    <div className="class-title">Class Name</div>
-                    <div className="join-hint">Students can join this class with this code</div>
-                    <div className="class-code">L49FH7</div>
-                    <div className="change-code-button">CHANGE</div>
+                <div>Your Classes:</div>
+                <div className="class-list">
+                    <div className={selectedClass === "J30DN3" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("J30DN3")}>
+                        <div className="class-title">Class Name</div>
+                        <div className="join-hint">Students can join this class with this code</div>
+                        <div className="class-code">J30DN3</div>
+                        <div className="change-code-button">CHANGE</div>
+                    </div>
+                    <div className={selectedClass === "JS93N8" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("JS93N8")}>
+                        <div className="class-title">Class Name</div>
+                        <div className="join-hint">Students can join this class with this code</div>
+                        <div className="class-code">JS93N8</div>
+                        <div className="change-code-button">CHANGE</div>
+                    </div>
+                    <div className={selectedClass === "L49FH7" ? "class-container selected-class" : "class-container"} onClick={() => handleClassChange("L49FH7")}>
+                        <div className="class-title">Class Name</div>
+                        <div className="join-hint">Students can join this class with this code</div>
+                        <div className="class-code">L49FH7</div>
+                        <div className="change-code-button">CHANGE</div>
+                    </div>
                 </div>
             </div>
 
