@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo, FAQIcon, StudentsIcon, GalleryIcon, AssignmentsIcon } from '../assets/Icons.js';
 import LogoutButton from './LogoutButton.js';
 
@@ -6,13 +6,43 @@ const NavBar = () => {
 
     // Get current url location
     const location = window.location.pathname;
+    const screenWidth = window.innerWidth;
 
     // Get user role ()
     // REPLACE THIS WITH DATABASE DETAILS
     const userRole = localStorage.getItem('userRole');
 
+    // function for toggling navbar
+    const [navBarExpanded, setNavBarExpanded] = useState(true);
+
+    {/* toggleNavBar()
+      * expand/collapse navbar
+      * @param none
+      * @return none
+      * @precondition none
+      * @postcondition navbar is expanded/collapsed
+    */}
+    const toggleNavBar = () => {
+        setNavBarExpanded(!navBarExpanded);
+        if (!navBarExpanded) {
+            document.getElementsByClassName('nav-bar')[0].classList.add('nav-bar-hide');
+            document.getElementsByClassName('nav-bar-logo')[0].classList.add('nav-bar-logo-hide');
+            document.getElementsByClassName('nav-bar')[0].classList.remove('nav-bar-show');
+            document.getElementsByClassName('nav-bar-logo')[0].classList.remove('nav-bar-logo-show');
+            document.getElementsByClassName('hamburger')[0].classList.remove('hamburger-expanded');
+            document.getElementsByClassName('hamburger-container')[0].classList.remove('hamburger-container-expanded');
+        } else {
+            document.getElementsByClassName('nav-bar')[0].classList.remove('nav-bar-hide');
+            document.getElementsByClassName('nav-bar-logo')[0].classList.remove('nav-bar-logo-hide');
+            document.getElementsByClassName('nav-bar')[0].classList.add('nav-bar-show');
+            document.getElementsByClassName('nav-bar-logo')[0].classList.add('nav-bar-logo-show');
+            document.getElementsByClassName('hamburger')[0].classList.add('hamburger-expanded');
+            document.getElementsByClassName('hamburger-container')[0].classList.add('hamburger-container-expanded');
+        }
+    }
+
     // useEffect for updating location
-    useEffect(() => {}, [location]);
+    useEffect(() => {}, [location, navBarExpanded]);
 
     return ( userRole === 'student' ?
     // student navbar
@@ -52,9 +82,12 @@ const NavBar = () => {
     :
     // teacher navbar
     <>
-        <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
+        <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo nav-bar-logo-hide' />
+        <div className='hamburger-container' onClick={toggleNavBar}>
+            <div className={screenWidth > 1000 ? "d-none" : "hamburger"}></div>
+        </div>
 
-        <div className='nav-bar d-flex flex-column'>
+        <div className='nav-bar nav-bar-hide d-flex flex-column'>
             <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/home'>
                 <HomeIcon />
                 Home
@@ -86,7 +119,7 @@ const NavBar = () => {
             </a>
         </div>
 
-        <LogoutButton />
+        <LogoutButton logoutButtonHidden={navBarExpanded ? false : true} />
     </>
     );
 }

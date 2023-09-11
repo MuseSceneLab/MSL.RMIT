@@ -1,5 +1,6 @@
 import GreetingHeading from "../components/GreetingHeading";
 import { UserIcon, categoryTitle } from "../assets/Icons.js";
+import SettingsButton from "../components/SettingsButton";
 
 const FAQ = () => {
 
@@ -10,7 +11,7 @@ const FAQ = () => {
     <div className="page">
         <div className="top-row">
             <GreetingHeading heading='Frequently Asked Questions' />
-            <div><UserIcon />{userRole}</div>
+            <SettingsButton />
         </div>
 
         <div className="d-flex flex-wrap faq-categories">
