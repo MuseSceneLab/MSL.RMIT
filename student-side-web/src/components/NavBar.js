@@ -44,7 +44,7 @@ const NavBar = () => {
     // useEffect for updating location
     useEffect(() => {}, [location, navBarExpanded]);
 
-    return ( userRole === 'student' ?
+    return ( userRole === 'Student' ?
     // student navbar
     <>
 

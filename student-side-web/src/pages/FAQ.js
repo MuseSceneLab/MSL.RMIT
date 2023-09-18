@@ -14,15 +14,6 @@ const FAQ = () => {
             <SettingsButton />
         </div>
 
-        <div className="d-flex flex-wrap faq-categories">
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-                <div className="faq-category"><img src={categoryTitle} alt="placeholder" /></div>
-        </div>
-
         <div className="faq-container">
             <div className="greeting-heading mt-5">Category/Topic</div>
             <hr className="thick-hr" />

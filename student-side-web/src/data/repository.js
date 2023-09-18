@@ -1,9 +1,30 @@
 import axios from 'axios';
 
-const API_URL = 'https://q0p70qjhod.execute-api.ap-southeast-2.amazonaws.com/';
+const CREATE_NEW_ACCOUNT_API_URL = 'https://9u3740ygj0.execute-api.ap-southeast-2.amazonaws.com/default/'
+const PROFESSOR_SIGN_UP_API_URL = "https://dfwcgm8zwi.execute-api.ap-southeast-2.amazonaws.com/PROFTEST2/professors"
+const STUDENT_LOG_IN_API_URL = "https://n344d790f2.execute-api.ap-southeast-2.amazonaws.com/default/students/login"
+const PROFESSOR_LOG_IN_API_URL = "https://dfwcgm8zwi.execute-api.ap-southeast-2.amazonaws.com/PROFTEST2/professors/login"
 
-export async function testData()  {
-    const response = await axios.get(API_URL + 'Test');
-    const data = response.data;
-    return data;
+async function createStudentAccount(user) {
+    const response = await axios.post(CREATE_NEW_ACCOUNT_API_URL + 'create_new_student', user);
+    return response.data;
 }
+
+async function createProfessorAccount(user) {
+    const response = await axios.put(PROFESSOR_SIGN_UP_API_URL, user);
+    return true;
+}
+
+async function studentLogIn(credentials) {
+    const response = await axios.post(STUDENT_LOG_IN_API_URL, credentials);
+    return response.data;
+}
+
+async function professorLogIn(credentials) {
+    const response = await axios.post(PROFESSOR_LOG_IN_API_URL, credentials);
+    return response.data;
+}
+
+export {
+    createStudentAccount, createProfessorAccount, studentLogIn, professorLogIn
+};

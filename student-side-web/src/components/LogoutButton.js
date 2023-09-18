@@ -9,11 +9,20 @@ const LogoutButton = (props) => {
     // useEffect for updating logout button hidden state
     useEffect(() => {}, [logoutButtonHidden]);
 
+    // handle logout
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('userRole');
+        window.location.href = '/user-selection';
+    }
+
     return (
     <>
         <a className={logoutButtonHidden ? 'logout-button logout-button-show' : 'logout-button logout-button-hide'} href='/user-selection'>
-            <LogOutIcon />
-            Logout
+            <div onClick={handleLogout}>
+                <LogOutIcon />
+                Logout
+            </div>
         </a>
     </>
     )
