@@ -22,10 +22,10 @@ function UserSelection() {
           <p className="center-text">Choose your User:</p>
           <div className="user-options">
             <div className="user-options-container">
-              <a className="user-option" href="/signup" onClick={() => setRole("Student")}>
+              <a className="user-option" href="/MSL.RMIT/#/signup" onClick={() => setRole("Student")}>
                 <img src={studentIcon} alt="Student Icon" />
               </a>
-              <a className="user-option" href="/signup" onClick={() => setRole("Professor")}>
+              <a className="user-option" href="/MSL.RMIT/#/signup" onClick={() => setRole("Professor")}>
                 <img src={professorIcon} alt="Professor Icon" />
               </a>
             </div>

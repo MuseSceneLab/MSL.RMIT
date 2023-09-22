@@ -3,7 +3,7 @@ import { SettingsIcon } from '../assets/Icons';
 
 const SettingsButton = () => {
     return (
-    <a href='/settings'>
+    <a href='/MSL.RMIT/#/settings'>
         <div className='settings-button'>
             <SettingsIcon />
             Settings

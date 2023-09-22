@@ -44,7 +44,7 @@ function StudentLoginForm() {
             // remove password field before storing in local storage
             delete response.password;
             localStorage.setItem('user', JSON.stringify(response));
-            window.location.href = '/home';
+            window.location.href = '/MSL.RMIT/#/home';
           }
           // if the user does not exist, display error message
           else {
@@ -78,8 +78,8 @@ function StudentLoginForm() {
             </div>
 
             <div className="form-login">
-              <p><a href="/signup" className="login-link">Sign up</a></p>
-              <p><a href="/signup" className="login-link">Forgot your password?</a></p>
+              <p><a href="/MSL.RMIT/#/signup" className="login-link">Sign up</a></p>
+              <p><a href="/MSL.RMIT/#/signup" className="login-link">Forgot your password?</a></p>
             </div>
 
             <button className="signup-button" onClick={handleLogin}>LOG IN</button>

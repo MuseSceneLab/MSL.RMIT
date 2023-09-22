@@ -51,7 +51,7 @@ const ProfessorLoginForm = () => {
                     delete response.password
                     localStorage.setItem('user', JSON.stringify(response))
                     localStorage.setItem('userRole', userRole)
-                    window.location.href = "/home";
+                    window.location.href = "/MSL.RMIT/#/home";
                 }
                 // if the user does not exist, display error message
                 else {
@@ -95,7 +95,7 @@ const ProfessorLoginForm = () => {
                     </div>
 
                     <div className="professor-signup">
-                    <p><a href="/signup" className="login-link">Don't have an account? Sign up</a></p>
+                    <p><a href="/MSL.RMIT/#/signup" className="login-link">Don't have an account? Sign up</a></p>
                     </div>
 
                     <div className="form-login">
@@ -103,7 +103,7 @@ const ProfessorLoginForm = () => {
                         <input type="checkbox" />
                         <span className="checkbox-label-text">Remember Me</span>
                       </label>
-                      <p><a href="/signup" className="login-link">Forgot your password?</a></p>
+                      <p><a href="/MSL.RMIT/#/signup" className="login-link">Forgot your password?</a></p>
                     </div>
 
                     <button className="signup-button" onClick={handleLogin}>LOG IN</button>

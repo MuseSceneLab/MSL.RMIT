@@ -117,12 +117,12 @@ const ProfessorSignupForm = () => {
             </div>
 
             <div className="professor-login">
-              <a href="/login" className="login-link">Already have an account? Log in</a>
+              <a href="/MSL.RMIT/#/login" className="login-link">Already have an account? Log in</a>
             </div>
 
             <button className="signup-button" onClick={handleSignUp}>SIGN UP</button>
 
-            <a className="signup-button" href='/home'>Demo signup</a>
+            <a className="signup-button" href='/MSL.RMIT/#/home'>Demo signup</a>
           </form>
         </section>
       </div>

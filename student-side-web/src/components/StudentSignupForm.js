@@ -154,14 +154,14 @@ function StudentSignupForm() {
 
           {/* Login button */}
             <div className="form-login">
-              <a href="/login" className="login-link right-align">Already have an account? Log in</a>
+              <a href="/MSL.RMIT/#/login" className="login-link right-align">Already have an account? Log in</a>
             </div>
 
             {/* Signup button */}
             <button className="signup-button" onClick={handleSignUp}>SIGN UP</button>
 
             {/* For demo only */}
-            <a className="signup-button" href='/home'>Demo signup</a>
+            <a className="signup-button" href='/MSL.RMIT/#/home'>Demo signup</a>
         </form>
 
       </section>
