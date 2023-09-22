@@ -24,15 +24,15 @@ const AppRouter = () => {
     return (
         <Router>
             {/* Only shows Nav Bar under these URLs */}
-            <div className={location === '/home/' ||
-                            location === '/studio/' ||
-                            location === '/inbox/' ||
-                            location === '/library/' ||
-                            location === '/settings/' ||
-                            location === '/students/' ||
-                            location === '/assignments/' ||
-                            location === '/gallery/' ||
-                            location === '/faq/'
+            <div className={location === '/home' ||
+                            location === '/studio' ||
+                            location === '/inbox' ||
+                            location === '/library' ||
+                            location === '/settings' ||
+                            location === '/students' ||
+                            location === '/assignments' ||
+                            location === '/gallery' ||
+                            location === '/faq'
                             ? '' : 'collapse'}>
                 <NavBar />
             </div>
