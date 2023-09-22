@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const CREATE_NEW_ACCOUNT_API_URL = 'https://9u3740ygj0.execute-api.ap-southeast-2.amazonaws.com/default/'
-const PROFESSOR_SIGN_UP_API_URL = "https://dfwcgm8zwi.execute-api.ap-southeast-2.amazonaws.com/PROFTEST2/professors"
 const STUDENT_LOG_IN_API_URL = "https://n344d790f2.execute-api.ap-southeast-2.amazonaws.com/default/students/login"
+const PROFESSOR_SIGN_UP_API_URL = "https://dfwcgm8zwi.execute-api.ap-southeast-2.amazonaws.com/PROFTEST2/professors"
 const PROFESSOR_LOG_IN_API_URL = "https://dfwcgm8zwi.execute-api.ap-southeast-2.amazonaws.com/PROFTEST2/professors/login"
 
 async function createStudentAccount(user) {
@@ -22,6 +22,7 @@ async function studentLogIn(credentials) {
 
 async function professorLogIn(credentials) {
     const response = await axios.post(PROFESSOR_LOG_IN_API_URL, credentials);
+    console.log("response:" + response)
     return response.data;
 }
 

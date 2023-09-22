@@ -41,6 +41,7 @@ const ProfessorLoginForm = () => {
 
         // login logic
         if (credentials.email !== "" && credentials.password !== "") {
+          console.log(credentials)
             professorLogIn(credentials)
             .then((response) => {
               console.log(response)
