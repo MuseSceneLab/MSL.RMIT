@@ -22,39 +22,37 @@ const AppRouter = () => {
     const location = window.location.pathname;
 
     return (
-        <>
-            <Router>
-                {/* Only shows Nav Bar under these URLs */}
-                <div className={location === '/home' ||
-                                location === '/studio' ||
-                                location === '/inbox' ||
-                                location === '/library' ||
-                                location === '/settings' ||
-                                location === '/students' ||
-                                location === '/assignments' ||
-                                location === '/gallery' ||
-                                location === '/faq'
-                                ? '' : 'collapse'}>
-                    <NavBar />
-                </div>
-                <Routes>
-                    <Route path='/' element={<Landing />} />
-                    <Route path='/user-selection' element={<UserSelection />} />
-                    <Route path='/home' element={<Home />} />
-                    <Route path='/studio' element={<Studio />} />
-                    <Route path='/inbox' element={<Inbox />} />
-                    <Route path='/library' element={<Library />} />
-                    <Route path='/faq' element={<FAQ />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/signup' element={<Signup />} />
-                    <Route path='/settings' element={<Settings />} />
-                    <Route path='/students' element={<Students />} />
-                    <Route path='/assignments' element={<Assignments />} />
-                    <Route path='/gallery' element={<Gallery />} />
-                    <Route path='*' element={<Landing />} />
-                </Routes>
-            </Router>
-        </>
+        <Router>
+            {/* Only shows Nav Bar under these URLs */}
+            <div className={location === '/home/' ||
+                            location === '/studio/' ||
+                            location === '/inbox/' ||
+                            location === '/library/' ||
+                            location === '/settings/' ||
+                            location === '/students/' ||
+                            location === '/assignments/' ||
+                            location === '/gallery/' ||
+                            location === '/faq/'
+                            ? '' : 'collapse'}>
+                <NavBar />
+            </div>
+            <Routes>
+                <Route exact path='/' element={<Landing />} />
+                <Route path='/user-selection/' element={<UserSelection />} />
+                <Route path='/home/' element={<Home />} />
+                <Route path='/studio/' element={<Studio />} />
+                <Route path='/inbox/' element={<Inbox />} />
+                <Route path='/library/' element={<Library />} />
+                <Route path='/faq/' element={<FAQ />} />
+                <Route path='/login/' element={<Login />} />
+                <Route path='/signup/' element={<Signup />} />
+                <Route path='/settings/' element={<Settings />} />
+                <Route path='/students/' element={<Students />} />
+                <Route path='/assignments/' element={<Assignments />} />
+                <Route path='/gallery/' element={<Gallery />} />
+                <Route path='*' element={<Landing />} />
+            </Routes>
+        </Router>
     );
 }
 

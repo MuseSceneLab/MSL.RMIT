@@ -51,27 +51,27 @@ const NavBar = () => {
         <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
 
         <div className='nav-bar d-flex flex-column'>
-            <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/home'>
+            <a className={location === '/home/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/home/'>
                 <HomeIcon />
                 Home
             </a>
 
-            <a className={location === '/studio' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/studio'>
+            <a className={location === '/studio/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/studio/'>
                 <StudioIcon />
                 Studio
             </a>
 
-            <a className={location === '/inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/inbox'>
+            <a className={location === '/inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/inbox/'>
                 <InboxIcon />
                 Inbox
             </a>
 
-            <a className={location === '/library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/library'>
+            <a className={location === '/library' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/library/'>
                 <LibraryIcon />
                 Library
             </a>
 
-            <a className={location === '/faq' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/faq'>
+            <a className={location === '/faq' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/faq/'>
                 <FAQIcon />
                 Help
             </a>
@@ -88,32 +88,32 @@ const NavBar = () => {
         </div>
 
         <div className='nav-bar nav-bar-hide d-flex flex-column'>
-            <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/home'>
+            <a className={location === '/home/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/home/'>
                 <HomeIcon />
                 Home
             </a>
 
-            <a className={location === '/students' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/students'>
+            <a className={location === '/students/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/students/'>
                 <StudentsIcon />
                 Students
             </a>
 
-            <a className={location === '/assignments' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/assignments'>
+            <a className={location === '/assignments/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/assignments/'>
                 <AssignmentsIcon />
                 Assignments
             </a>
 
-            <a className={location === '/gallery' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/gallery'>
+            <a className={location === '/gallery/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/gallery/'>
                 <GalleryIcon />
                 Gallery
             </a>
 
-            <a className={location === '/inbox' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/inbox'>
+            <a className={location === '/inbox/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/inbox/'>
                 <InboxIcon />
                 Inbox
             </a>
 
-            <a className={location === '/faq' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/faq'>
+            <a className={location === '/faq/' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/faq/'>
                 <FAQIcon />
                 Help
             </a>
