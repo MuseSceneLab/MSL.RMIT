@@ -25,32 +25,32 @@ const AppRouter = () => {
         <>
             <Router>
                 {/* Only shows Nav Bar under these URLs */}
-                <div className={location === '/home' ||
-                                location === '/studio' ||
-                                location === '/inbox' ||
-                                location === '/library' ||
-                                location === '/settings' ||
-                                location === '/students' ||
-                                location === '/assignments' ||
-                                location === '/gallery' ||
-                                location === '/faq'
+                <div className={location === '/MSL.RMIT/#/home' ||
+                                location === '/MSL.RMIT/#/studio' ||
+                                location === '/MSL.RMIT/#/inbox' ||
+                                location === '/MSL.RMIT/#/library' ||
+                                location === '/MSL.RMIT/#/settings' ||
+                                location === '/MSL.RMIT/#/students' ||
+                                location === '/MSL.RMIT/#/assignments' ||
+                                location === '/MSL.RMIT/#/gallery' ||
+                                location === '/MSL.RMIT/#/faq'
                                 ? '' : 'collapse'}>
                     <NavBar />
                 </div>
                 <Routes>
-                    <Route path='/' element={<Landing />} />
-                    <Route path='/user-selection' element={<UserSelection />} />
-                    <Route path='/home' element={<Home />} />
-                    <Route path='/studio' element={<Studio />} />
-                    <Route path='/inbox' element={<Inbox />} />
-                    <Route path='/library' element={<Library />} />
-                    <Route path='/faq' element={<FAQ />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/signup' element={<Signup />} />
-                    <Route path='/settings' element={<Settings />} />
-                    <Route path='/students' element={<Students />} />
-                    <Route path='/assignments' element={<Assignments />} />
-                    <Route path='/gallery' element={<Gallery />} />
+                    <Route path='/MSL.RMIT/#/' element={<Landing />} />
+                    <Route path='/MSL.RMIT/#/user-selection' element={<UserSelection />} />
+                    <Route path='/MSL.RMIT/#/home' element={<Home />} />
+                    <Route path='/MSL.RMIT/#/studio' element={<Studio />} />
+                    <Route path='/MSL.RMIT/#/inbox' element={<Inbox />} />
+                    <Route path='/MSL.RMIT/#/library' element={<Library />} />
+                    <Route path='/MSL.RMIT/#/faq' element={<FAQ />} />
+                    <Route path='/MSL.RMIT/#/login' element={<Login />} />
+                    <Route path='/MSL.RMIT/#/signup' element={<Signup />} />
+                    <Route path='/MSL.RMIT/#/settings' element={<Settings />} />
+                    <Route path='/MSL.RMIT/#/students' element={<Students />} />
+                    <Route path='/MSL.RMIT/#/assignments' element={<Assignments />} />
+                    <Route path='/MSL.RMIT/#/gallery' element={<Gallery />} />
                     <Route path='*' element={<Landing />} />
                 </Routes>
             </Router>
