@@ -1,7 +1,7 @@
 {
   "name": "student-side-web",
   "version": "0.1.0",
-  "homepage": "https://musescenelab.github.io/MSL.RMIT/",
+  "homepage": "https://musescenelab.github.io/MSL.RMIT",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
