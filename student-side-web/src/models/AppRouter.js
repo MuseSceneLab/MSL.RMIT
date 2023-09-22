@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Studio from '../pages/Studio';
@@ -19,12 +19,17 @@ import Gallery from '../pages/Gallery';
 
 const AppRouter = () => {
 
-    const location = window.location.pathname;
+    var location = window.location.href.split('#')[1];
+
+    useEffect(() => {
+        console.log(location);
+    }
+    , [location]);
 
     return (
         <Router>
             {/* Only shows Nav Bar under these URLs */}
-            <div className={location === '/home' ||
+            <div onLoad={() => {}} className={location === '/home' ||
                             location === '/studio' ||
                             location === '/inbox' ||
                             location === '/library' ||
