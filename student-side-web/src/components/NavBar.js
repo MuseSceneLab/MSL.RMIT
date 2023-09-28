@@ -48,7 +48,10 @@ const NavBar = () => {
     // student navbar
     <>
 
-        <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo' />
+    <img src={MSLLogo} alt='Muse Scene Lab Logo' className='nav-bar-logo nav-bar-logo-hide' />
+        <div className='hamburger-container' onClick={toggleNavBar}>
+            <div className={screenWidth > 1000 ? "d-none" : "hamburger"}></div>
+        </div>
 
         <div className='nav-bar d-flex flex-column'>
             <a className={location === '/home' ? 'nav-bar-item item-selected' : 'nav-bar-item'} href='/MSL.RMIT/#/home/'>
@@ -77,7 +80,7 @@ const NavBar = () => {
             </a>
         </div>
 
-        <LogoutButton />
+        <LogoutButton logoutButtonHidden={navBarExpanded ? false : true} />
     </>
     :
     // teacher navbar
