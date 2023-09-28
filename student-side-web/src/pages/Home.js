@@ -4,6 +4,8 @@ import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
 import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
 import { testData } from "../data/repository";
+import TempoChart from "../components/TempoChart";
+import { original, performance1 } from "../resources/metricsData";
 
 const Home = () => {
 
@@ -139,8 +141,9 @@ const Home = () => {
                             <div className={selectedEvolution === "Last Rehearsal" ? "px-2 rehearsal-selected" : "px-2 rehearsal"} onClick={() => handleEvolutionChange("Last Rehearsal")}>Last Rehearsal</div>
                         </div>
                     </div>
-                    <div>
 
+                    <div className="chart-container">
+                    {selectedMetrics === "Tempo" ? <TempoChart originalData={original} rehearsalData={performance1} exercise={selectedExercise} /> : <div className="d=none"></div>}
                     </div>
                 </div> 
                 : 

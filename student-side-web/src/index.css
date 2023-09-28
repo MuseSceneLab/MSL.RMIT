@@ -320,6 +320,19 @@ thick-hr {
   width: 13rem;
 }
 
+/* Tempo Chart */
+.chart-container {
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap; 
+}
+
+.bar-num {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
 /* Signup Form */
 .form-box {
   background-color: var(--colour-purple-grey);
