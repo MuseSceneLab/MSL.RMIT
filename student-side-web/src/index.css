@@ -321,6 +321,7 @@ thick-hr {
 }
 
 /* Tempo Chart */
+
 .chart-container {
   position: relative;
   width: 100%;
@@ -1294,6 +1295,7 @@ summary::-webkit-details-marker {display: none; }
     background-color: var(--colour-white);
     transform: translateX(-100%);
     animation: slide-out 0.5s forwards;
+    z-index: 1;
   }
 
   .nav-bar-show {
@@ -1305,6 +1307,7 @@ summary::-webkit-details-marker {display: none; }
     position: fixed;
     background-color: var(--colour-white);
     animation: slide-in 0.5s forwards;
+    z-index: 1;
   }
   
   .nav-bar-logo-hide {
@@ -1328,7 +1331,7 @@ summary::-webkit-details-marker {display: none; }
 
   .logout-button {
     display: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .logout-button-hide {

@@ -12,6 +12,9 @@ const Home = () => {
     // Get user role
     const userRole = localStorage.getItem('userRole');
 
+    // Get user data
+    const user = JSON.parse(localStorage.getItem('user')).body;
+
     // state variable for selecting from professor's classes
     const [selectedClass, setSelectedClass] = useState('');
 
@@ -55,7 +58,7 @@ const Home = () => {
     <div className="page">
         <div className="top-row">
             {/* <div>{schools}</div> */}
-            <GreetingHeading heading='Welcome {Student Name}' />
+            <GreetingHeading heading={`Welcome,  ${user.firstName}`} />
             <SettingsButton />
         </div>
 
