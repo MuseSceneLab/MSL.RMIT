@@ -21,10 +21,10 @@ const AppRouter = () => {
 
     var location = window.location.href.split('#')[1];
 
-    useEffect(() => {
-        console.log(location);
-    }
-    , [location]);
+    // useEffect(() => {
+    //     console.log(location);
+    // }
+    // , [location]);
 
     return (
         <Router>

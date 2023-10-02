@@ -265,6 +265,50 @@ thick-hr {
   margin-bottom: 2rem;
 }
 
+.evolution-last-rehearsal-switch {
+  font-weight: 700;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--colour-grey);
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.evolution-last-rehearsal-switch > .evolution-selected, .evolution-last-rehearsal-switch > .rehearsal-selected {
+  background-color: var(--colour-hot-pink);
+  color: var(--colour-white);
+  border-radius: 1rem;
+  padding: .5rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 50%;
+  text-align: center;
+}
+
+.evolution-last-rehearsal-switch > .evolution, .evolution-last-rehearsal-switch > .rehearsal {
+  padding: .5rem;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.statistics-title {
+  font-weight: 700;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.statistics-title-selected {
+  background-color: var(--colour-hot-pink);
+  color: var(--colour-white);
+  font-weight: 700;
+  padding: .5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
 .no-result {
   font-weight: 700;
   text-align: center;
@@ -274,6 +318,20 @@ thick-hr {
 
 .no-result img {
   width: 13rem;
+}
+
+/* Tempo Chart */
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap; 
+}
+
+.bar-num {
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 /* Signup Form */
@@ -1125,8 +1183,8 @@ summary::-webkit-details-marker {display: none; }
     display: block;
     cursor: pointer;
     position: fixed;
-    top: 1.75rem;
-    left: 1.75rem;
+    top: 0rem;
+    left: .5rem;
     z-index: 99999;
     width: 2.5rem;
     height: 3rem;
@@ -1153,11 +1211,11 @@ summary::-webkit-details-marker {display: none; }
     display: block;
     cursor: pointer;
     position: fixed;
-    top: 3rem;
-    left: 2rem;
+    top: 1.25rem;
+    left: .75rem;
     z-index: 999;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: var(--colour-purple-grey);
     border-radius: 1rem;
     transition: transform 0.5s;
@@ -1167,7 +1225,7 @@ summary::-webkit-details-marker {display: none; }
     content: '';
     position: absolute;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: var(--colour-purple-grey);
     border-radius: 1rem;
     top: -0.75rem;
@@ -1179,7 +1237,7 @@ summary::-webkit-details-marker {display: none; }
     content: '';
     position: absolute;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: var(--colour-purple-grey);
     border-radius: 1rem;
     top: 0.75rem;
@@ -1191,11 +1249,11 @@ summary::-webkit-details-marker {display: none; }
     display: block;
     cursor: pointer;
     position: fixed;
-    top: 3rem;
-    left: 2rem;
+    top: 1.25rem;
+    left: .75rem;
     z-index: 999;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: transparent;
     border-radius: 1rem;
     transition: transform 0.5s;
@@ -1205,12 +1263,12 @@ summary::-webkit-details-marker {display: none; }
     content: '';
     position: absolute;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: var(--colour-purple-grey);
     border-radius: 1rem;
     top: 0.75rem;
     left: 0;
-    transform: rotate(45deg) translate(-42px, -17px);
+    transform: rotate(45deg) translateX(-1rem);
     transition: transform 0.5s;
   }
 
@@ -1218,12 +1276,12 @@ summary::-webkit-details-marker {display: none; }
     content: '';
     position: absolute;
     width: 2rem;
-    height: 7px;
+    height: 3px;
     background-color: var(--colour-purple-grey);
     border-radius: 1rem;
     top: -0.75rem;
     left: 0;
-    transform: rotate(-45deg) translate(0px, -25px);
+    transform: rotate(-45deg) translateX(-1rem);
     transition: transform 0.5s;
   }
   
@@ -1237,6 +1295,7 @@ summary::-webkit-details-marker {display: none; }
     background-color: var(--colour-white);
     transform: translateX(-100%);
     animation: slide-out 0.5s forwards;
+    z-index: 1;
   }
 
   .nav-bar-show {
@@ -1248,6 +1307,7 @@ summary::-webkit-details-marker {display: none; }
     position: fixed;
     background-color: var(--colour-white);
     animation: slide-in 0.5s forwards;
+    z-index: 1;
   }
   
   .nav-bar-logo-hide {
@@ -1271,7 +1331,7 @@ summary::-webkit-details-marker {display: none; }
 
   .logout-button {
     display: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .logout-button-hide {

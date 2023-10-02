@@ -4,36 +4,61 @@ import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
 import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
 import { testData } from "../data/repository";
+import TempoChart from "../components/TempoChart";
+import { original, original2, performance1, performance2 } from "../resources/metricsData";
 
 const Home = () => {
 
     // Get user role
     const userRole = localStorage.getItem('userRole');
-    // const [schools, setSchools] = useState([]);
-    // const data = testData();
-    // useEffect(() => {
-    //     const loadSchools = async () => {
-    //         const schools = await data;
-    //         setSchools(schools.map(school => <div>{school.schoolName}<br/></div>));
-    //     }
-    //     loadSchools();
-    // }, []);
 
-    // console.log(schools);
-
+    // Get user data
+    const user = JSON.parse(localStorage.getItem('user')).body;
 
     // state variable for selecting from professor's classes
     const [selectedClass, setSelectedClass] = useState('');
 
+    // state variable for displaying exercise metrics
+    const [selectedExercise, setSelectedExercise] = useState(0);
+
+    // selection of metrics
+    const [selectedMetrics, setSelectedMetrics] = useState("Intonation");
+
+    // selection of evolution or last rehearsal
+    const [selectedEvolution, setSelectedEvolution] = useState("Evolution");
+
+    // change class code
     const handleClassChange = classCode => {
         setSelectedClass(classCode);
     }
+
+    // change exercise from user input
+    const handleExerciseChange = () => {
+        const exercise = document.querySelector('.exercise-drop-down').value;
+        setSelectedExercise(exercise);
+    }
+
+    // change metrics
+    const handleMetricsChange = metrics => {
+        setSelectedMetrics(metrics);
+    }
+
+    // change evolution or last rehearsal
+    const handleEvolutionChange = input => {
+        setSelectedEvolution(input);
+    }
+
+    // update exercise metrics chart
+    const updateResults = () => {
+
+    }
+
 
     return ( userRole === 'Student' ?
     <div className="page">
         <div className="top-row">
             {/* <div>{schools}</div> */}
-            <GreetingHeading heading='Welcome {Student Name}' />
+            <GreetingHeading heading={`Welcome,  ${user.firstName}`} />
             <SettingsButton />
         </div>
 
@@ -91,22 +116,46 @@ const Home = () => {
                 <option value='song3'>Song 3</option>
             </select>
 
-            <select className='exercise-drop-down'>
+            <select className='exercise-drop-down' name="exercise" onChange={() => handleExerciseChange()}>
                 <option value=''>Select an exercise</option>
-                <option value='exercise1'>Exercise 1</option>
-                <option value='exercise2'>Exercise 2</option>
-                <option value='exercise3'>Exercise 3</option>
+                <option value={1}>Exercise 1</option>
+                <option value={2}>Exercise 2</option>
+                {/* <option value={3}>Exercise 3</option> */}
             </select>
 
-            <div className='your-statistics-submit'>Show your results</div>
+            <div className='your-statistics-submit' onClick={updateResults}>Show your results</div>
         </form>
 
         <div className='your-statistics-results'>
-            <div className='no-result'>
-                <div className='no-result-title'>Oops, there is nothing to display here!</div>
-                <img className='no-result-image' src={noResultsIcon} alt='no results' />
-                <div className='no-result-description'>Please select a song and exercise in order for us to display your metrics.</div>
-            </div>
+            {selectedExercise !== '' ?
+                <div className='statistics-container'>
+                    <div className="d-flex">
+                        <div className="d-flex me-5">
+                            <div className={selectedMetrics === "Intonation" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Intonation")}>Intonation</div>
+                            <div className={selectedMetrics === "Blend" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Blend")}>Blend</div>
+                            <div className={selectedMetrics === "Articulation" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Articulation")}>Articulation</div>
+                            <div className={selectedMetrics === "Tempo" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Tempo")}>Tempo</div>
+                            <div className={selectedMetrics === "Dynamics" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Dynamics")}>Dynamics</div>
+                            <div className={selectedMetrics === "Rhythm" ? 'statistics-title-selected px-2' : 'statistics-title px-2'} onClick={() => handleMetricsChange("Rhythm")}>Rhythm</div>
+                        </div>
+
+                        <div className="d-flex evolution-last-rehearsal-switch">
+                            <div className={selectedEvolution === "Evolution" ? "px-2 evolution-selected" : "px-2 evolution"} onClick={() => handleEvolutionChange("Evolution")}>Evolution</div>
+                            <div className={selectedEvolution === "Last Rehearsal" ? "px-2 rehearsal-selected" : "px-2 rehearsal"} onClick={() => handleEvolutionChange("Last Rehearsal")}>Last Rehearsal</div>
+                        </div>
+                    </div>
+
+                    <div className="chart-container">
+                    {selectedMetrics === "Tempo" && selectedExercise !== '' ? <TempoChart originalData={original} originalData2={original2} exerciseData1={performance1} exerciseData2={performance2} exercise={selectedExercise} /> : <div className="d=none"></div>}
+                    </div>
+                </div> 
+                : 
+                <div className='no-result'>
+                    <div className='no-result-title'>Oops, there is nothing to display here!</div>
+                    <img className='no-result-image' src={noResultsIcon} alt='no results' />
+                    <div className='no-result-description'>Please select a song and exercise in order for us to display your metrics.</div>
+                </div>
+            }
         </div>
     </div>
     : 
