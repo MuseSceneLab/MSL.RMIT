@@ -5,7 +5,7 @@ import SettingsButton from "../components/SettingsButton";
 import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
 import { testData } from "../data/repository";
 import TempoChart from "../components/TempoChart";
-import { original, performance1 } from "../resources/metricsData";
+import { original, original2, performance1, performance2 } from "../resources/metricsData";
 
 const Home = () => {
 
@@ -120,14 +120,14 @@ const Home = () => {
                 <option value=''>Select an exercise</option>
                 <option value={1}>Exercise 1</option>
                 <option value={2}>Exercise 2</option>
-                <option value={3}>Exercise 3</option>
+                {/* <option value={3}>Exercise 3</option> */}
             </select>
 
             <div className='your-statistics-submit' onClick={updateResults}>Show your results</div>
         </form>
 
         <div className='your-statistics-results'>
-            {selectedExercise !== 0 ?
+            {selectedExercise !== '' ?
                 <div className='statistics-container'>
                     <div className="d-flex">
                         <div className="d-flex me-5">
@@ -146,7 +146,7 @@ const Home = () => {
                     </div>
 
                     <div className="chart-container">
-                    {selectedMetrics === "Tempo" ? <TempoChart originalData={original} rehearsalData={performance1} exercise={selectedExercise} /> : <div className="d=none"></div>}
+                    {selectedMetrics === "Tempo" && selectedExercise !== '' ? <TempoChart originalData={original} originalData2={original2} exerciseData1={performance1} exerciseData2={performance2} exercise={selectedExercise} /> : <div className="d=none"></div>}
                     </div>
                 </div> 
                 : 

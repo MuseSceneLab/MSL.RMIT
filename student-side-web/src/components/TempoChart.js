@@ -5,7 +5,7 @@ const TempoChart = (props) => {
 
     
     const originalData = []
-    const rehearsalData = []
+    const exerciseData1 = []
     const exercise = parseInt(props.exercise)
 
     // process data for exercise 1
@@ -13,18 +13,18 @@ const TempoChart = (props) => {
         for (let i = 0; i < props.originalData.length; i++) {
             originalData.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/2 , y: props.originalData[i][2]})
         }
-        for (let i = 0; i < props.rehearsalData.length; i++) {
-            rehearsalData.push({x: props.rehearsalData[i][0] + (props.rehearsalData[i][1] - 1)/2 , y: props.rehearsalData[i][2]})
+        for (let i = 0; i < props.exerciseData1.length; i++) {
+            exerciseData1.push({x: props.exerciseData1[i][0] + (props.exerciseData1[i][1] - 1)/2 , y: props.exerciseData1[i][2]})
         }
     }
 
     // process data for exercise 2
     if (exercise === 2) {
-        for (let i = 0; i < props.originalData.length; i++) {
-            originalData.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/4 , y: props.originalData[i][2]})
+        for (let i = 0; i < props.originalData2.length; i++) {
+            originalData.push({x: props.originalData2[i][0] + (props.originalData2[i][1] - 1)/4 , y: props.originalData2[i][2]})
         }
-        for (let i = 0; i < props.rehearsalData.length; i++) {
-            rehearsalData.push({x: props.rehearsalData[i][0] + (props.rehearsalData[i][1] - 1)/4 , y: props.rehearsalData[i][2]})
+        for (let i = 0; i < props.exerciseData2.length; i++) {
+            exerciseData1.push({x: props.exerciseData2[i][0] + (props.exerciseData2[i][1] - 1)/4 , y: props.exerciseData2[i][2]})
         }
     }
 
@@ -40,6 +40,14 @@ const TempoChart = (props) => {
                     if (exercise === 1) {
                         if (decimal) {
                             return `${decimal / 10 * 4}`;
+                        } else {
+                            return (
+                            <tspan className='bar-num'>{whole}</tspan>
+                            );
+                        }
+                    } else if (exercise === 2) {
+                        if (decimal) {
+                            return parseInt(`${decimal / 10 * 4}`[0]) + 1;
                         } else {
                             return (
                             <tspan className='bar-num'>{whole}</tspan>
@@ -67,7 +75,7 @@ const TempoChart = (props) => {
                     style={{strokeWidth: 40}}
                 />
                 <LineSeries
-                    data={rehearsalData}
+                    data={exerciseData1}
                     color="red"
                     style={{ fillOpacity: 0, strokeWidth: 2 }}
                 />
