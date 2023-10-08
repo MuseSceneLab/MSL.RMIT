@@ -19,7 +19,7 @@ const Home = () => {
     const [selectedClass, setSelectedClass] = useState('');
 
     // state variable for displaying exercise metrics
-    const [selectedExercise, setSelectedExercise] = useState(0);
+    const [selectedExercise, setSelectedExercise] = useState('');
 
     // selection of metrics
     const [selectedMetrics, setSelectedMetrics] = useState("Intonation");
@@ -145,7 +145,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="chart-container">
+                    <div>
                     {selectedMetrics === "Tempo" && selectedExercise !== '' ? <TempoChart originalData={original} originalData2={original2} exerciseData1={performance1} exerciseData2={performance2} exercise={selectedExercise} /> : <div className="d=none"></div>}
                     </div>
                 </div> 

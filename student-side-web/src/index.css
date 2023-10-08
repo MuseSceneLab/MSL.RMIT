@@ -334,6 +334,25 @@ thick-hr {
   font-weight: bold;
 }
 
+.zoom-buttons {
+  display: flex;
+  position: relative;
+  left: 75%;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.zoom-in, .zoom-out {
+  cursor: pointer;
+  background-color: var(--colour-orange);
+  padding: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+  color: var(--colour-white);
+  font-weight: 700;
+}
+
 /* Signup Form */
 .form-box {
   background-color: var(--colour-purple-grey);

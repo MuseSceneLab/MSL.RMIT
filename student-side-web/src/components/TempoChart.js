@@ -1,4 +1,5 @@
 import { XYPlot, LineSeries, XAxis, YAxis } from 'react-vis';
+import { useState } from 'react';
 
 
 const TempoChart = (props) => {
@@ -7,6 +8,23 @@ const TempoChart = (props) => {
     const originalData = []
     const exerciseData1 = []
     const exercise = parseInt(props.exercise)
+
+    // for zoom in and zoom out
+    const [zoom, setZoom] = useState(2);
+
+    // for zoom in and zoom out
+    const zoomIn = () => {
+        if (zoom < 5) {
+            setZoom(zoom + 1);
+        }
+    }
+
+    // for zoom in and zoom out
+    const zoomOut = () => {
+        if (zoom > 1) {
+            setZoom(zoom - 1);
+        }
+    }
 
     // process data for exercise 1
     if (exercise === 1) {
@@ -31,56 +49,62 @@ const TempoChart = (props) => {
     const possibleBPMs = [originalData[0].y - 10, originalData[0].y - 5, originalData[0].y, originalData[0].y + 5, originalData[0].y + 10];
 
     return (
-        <div>
-            <XYPlot margin={{ left: 70 }} className="tempo-chart" height={200} width={originalData.length * 40} yDomain={[possibleBPMs[0], possibleBPMs[possibleBPMs.length - 1]]}>
-                <XAxis tickValues={originalData.map(value => value.x)} tickFormat={value => {
-                    let [whole, decimal] = value.toString().split('.');
-                    decimal = parseInt(decimal, 10);
+        <>
+            <div className='chart-container'>
+                <XYPlot margin={{ left: 70 }} className="tempo-chart" height={200} width={originalData.length * 20 * zoom} yDomain={[possibleBPMs[0], possibleBPMs[possibleBPMs.length - 1]]}>
+                    <XAxis tickValues={originalData.map(value => value.x)} tickFormat={value => {
+                        let [whole, decimal] = value.toString().split('.');
+                        decimal = parseInt(decimal, 10);
 
-                    if (exercise === 1) {
-                        if (decimal) {
-                            return `${decimal / 10 * 4}`;
-                        } else {
-                            return (
-                            <tspan className='bar-num'>{whole}</tspan>
-                            );
+                        if (exercise === 1) {
+                            if (decimal) {
+                                return `${decimal / 10 * 4}`;
+                            } else {
+                                return (
+                                <tspan className='bar-num'>{whole}</tspan>
+                                );
+                            }
+                        } else if (exercise === 2) {
+                            if (decimal) {
+                                return parseInt(`${decimal / 10 * 4}`[0]) + 1;
+                            } else {
+                                return (
+                                <tspan className='bar-num'>{whole}</tspan>
+                                );
+                            }
                         }
-                    } else if (exercise === 2) {
-                        if (decimal) {
-                            return parseInt(`${decimal / 10 * 4}`[0]) + 1;
-                        } else {
-                            return (
-                            <tspan className='bar-num'>{whole}</tspan>
-                            );
+                    }} />
+                    <YAxis tickTotal={possibleBPMs.length} tickValues={possibleBPMs} tickFormat={value => {
+                        if (value == originalData[0].y) {
+                            return <tspan style={{stroke: "#262261"}}>{`${value} bpm`}</tspan>
+                        } else if (value == originalData[0].y - 5 || value == originalData[0].y - 10) {
+                            return <tspan style={{stroke: "#F7931D"}}>{`${value} bpm`}</tspan>
+                        } else if (value == originalData[0].y + 5 || value == originalData[0].y + 10) {
+                            return <tspan style={{stroke: "#ED2A7B"}}>{`${value} bpm`}</tspan>
                         }
-                    }
-                }} />
-                <YAxis tickTotal={possibleBPMs.length} tickValues={possibleBPMs} tickFormat={value => {
-                    if (value == originalData[0].y) {
-                        return <tspan style={{stroke: "#262261"}}>{`${value} bpm`}</tspan>
-                    } else if (value == originalData[0].y - 5 || value == originalData[0].y - 10) {
-                        return <tspan style={{stroke: "#F7931D"}}>{`${value} bpm`}</tspan>
-                    } else if (value == originalData[0].y + 5 || value == originalData[0].y + 10) {
-                        return <tspan style={{stroke: "#ED2A7B"}}>{`${value} bpm`}</tspan>
-                    }
-                }}/>
-                <LineSeries
-                    data={originalData}
-                    color="#D6E6CECC"
-                    style={{strokeWidth: 60}}
-                />
-                <LineSeries
-                    data={originalData}
-                    color="#B2D0A0"
-                    style={{strokeWidth: 40}}
-                />
-                <LineSeries
-                    data={exerciseData1}
-                    color="red"
-                    style={{ fillOpacity: 0, strokeWidth: 2 }}
-                />
-            </XYPlot>
-        </div>
+                    }}/>
+                    <LineSeries
+                        data={originalData}
+                        color="#D6E6CECC"
+                        style={{strokeWidth: 60}}
+                    />
+                    <LineSeries
+                        data={originalData}
+                        color="#B2D0A0"
+                        style={{strokeWidth: 40}}
+                    />
+                    <LineSeries
+                        data={exerciseData1}
+                        color="red"
+                        style={{ fillOpacity: 0, strokeWidth: 2 }}
+                    />
+                </XYPlot>
+            </div>
+            <div className='zoom-buttons'>
+                <div className='zoom-in' onClick={zoomIn}>Zoom In</div>
+                <div className='zoom-out' onClick={zoomOut}>Zoom Out</div>
+            </div>
+        </>
     )
 }
 

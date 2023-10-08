@@ -62,6 +62,9 @@ const ProfessorSignupForm = () => {
         email: '',
         school: '',
       })
+
+      // redirect to home page
+      window.location.href = '/MSL.RMIT/#/home'
     }
   }
 
