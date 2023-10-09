@@ -322,9 +322,54 @@ thick-hr {
 
 /* Tempo Chart */
 
+.tempo-analysis {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.tempo-rate {
+  width: 100%;
+  background-color: var(--colour-white);
+  border-radius: 1rem;
+  border: var(--colour-black) solid 1px;;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.tempo-rate-title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.latest-rate, .average-rate, .times-completed {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 400;
+  padding: .5rem;
+  border: var(--colour-black) solid 1px;
+  border-radius: .5rem;
+}
+
+.latest-rate {
+  background-color: rgb(222, 236, 224);
+}
+
+.average-rate {
+  background-color: rgb(190, 218, 195);
+}
+
+.times-completed  {
+  background: rgb(79,47,138);
+  background: linear-gradient(45deg, rgba(79,47,138,1) 0%, rgba(147,84,194,1) 50%, rgba(79,47,138,1) 100%);
+  color: var(--colour-white);
+}
+
 .chart-container {
   position: relative;
-  width: 100%;
+  width: 60vw;
   overflow: scroll;
   white-space: nowrap; 
 }
@@ -337,7 +382,6 @@ thick-hr {
 .zoom-buttons {
   display: flex;
   position: relative;
-  left: 75%;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -351,6 +395,32 @@ thick-hr {
   border-radius: 2rem;
   color: var(--colour-white);
   font-weight: 700;
+}
+
+.chart-config {
+  display: flex;
+  gap: 1rem;
+}
+
+.record-history-title {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.record-history {
+  background-color: var(--colour-white);
+  padding: .5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+  display: flex;
+  gap: 1rem;
+  overflow: scroll;
+  width: 70%;
+}
+
+.record-group {
+  display: flex;
+  gap: .5rem;
 }
 
 /* Signup Form */

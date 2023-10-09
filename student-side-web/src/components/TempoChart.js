@@ -7,7 +7,9 @@ const TempoChart = (props) => {
     
     const originalData = []
     const exerciseData1 = []
+    const exerciseData2 = []
     const exercise = parseInt(props.exercise)
+    const selectedRecords = props.selectedRecords
 
     // for zoom in and zoom out
     const [zoom, setZoom] = useState(2);
@@ -31,8 +33,13 @@ const TempoChart = (props) => {
         for (let i = 0; i < props.originalData.length; i++) {
             originalData.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/2 , y: props.originalData[i][2]})
         }
+
         for (let i = 0; i < props.exerciseData1.length; i++) {
             exerciseData1.push({x: props.exerciseData1[i][0] + (props.exerciseData1[i][1] - 1)/2 , y: props.exerciseData1[i][2]})
+        }
+
+        for (let i = 0; i < props.exerciseData1Performance2.length; i++) {
+            exerciseData2.push({x: props.exerciseData1Performance2[i][0] + (props.exerciseData1Performance2[i][1] - 1)/2 , y: props.exerciseData1Performance2[i][2]})
         }
     }
 
@@ -49,7 +56,7 @@ const TempoChart = (props) => {
     const possibleBPMs = [originalData[0].y - 10, originalData[0].y - 5, originalData[0].y, originalData[0].y + 5, originalData[0].y + 10];
 
     return (
-        <>
+        <div>
             <div className='chart-container'>
                 <XYPlot margin={{ left: 70 }} className="tempo-chart" height={200} width={originalData.length * 20 * zoom} yDomain={[possibleBPMs[0], possibleBPMs[possibleBPMs.length - 1]]}>
                     <XAxis tickValues={originalData.map(value => value.x)} tickFormat={value => {
@@ -93,18 +100,25 @@ const TempoChart = (props) => {
                         color="#B2D0A0"
                         style={{strokeWidth: 40}}
                     />
-                    <LineSeries
-                        data={exerciseData1}
-                        color="red"
-                        style={{ fillOpacity: 0, strokeWidth: 2 }}
-                    />
+                    {selectedRecords.includes('record1') ? 
+                        <LineSeries
+                            data={exerciseData1}
+                            color="red"
+                            style={{ fillOpacity: 0, strokeWidth: 2, strokeOpacity: 0.5 }}
+                        /> : null
+                    }
+                    {selectedRecords.includes('record2') ?
+                        <LineSeries
+                            data={exerciseData2}
+                            color="blue"
+                            style={{ fillOpacity: 0, strokeWidth: 2, strokeOpacity: 0.5 }}
+                        /> : null
+                    }
+
+                    
                 </XYPlot>
             </div>
-            <div className='zoom-buttons'>
-                <div className='zoom-in' onClick={zoomIn}>Zoom In</div>
-                <div className='zoom-out' onClick={zoomOut}>Zoom Out</div>
-            </div>
-        </>
+        </div>
     )
 }
 

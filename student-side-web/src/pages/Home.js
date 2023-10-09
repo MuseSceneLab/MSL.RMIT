@@ -5,7 +5,7 @@ import SettingsButton from "../components/SettingsButton";
 import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
 import { testData } from "../data/repository";
 import TempoChart from "../components/TempoChart";
-import { original, original2, performance1, performance2 } from "../resources/metricsData";
+import { original, original2, performance1, performance1Second, performance2 } from "../resources/metricsData";
 
 const Home = () => {
 
@@ -26,6 +26,35 @@ const Home = () => {
 
     // selection of evolution or last rehearsal
     const [selectedEvolution, setSelectedEvolution] = useState("Evolution");
+
+    // for selecting history records
+    const [selectedRecords, setSelectedRecords] = useState([]);
+
+    // for zoom in and zoom out
+    const [zoom, setZoom] = useState(2);
+
+    // for selecting history records
+    const selectRecord = (e) => {
+        if (e.target.checked) {
+            setSelectedRecords([...selectedRecords, e.target.id]);
+        } else {
+            setSelectedRecords(selectedRecords.filter(record => record !== e.target.id));
+        }
+    }
+
+    // for zoom in and zoom out
+    const zoomIn = () => {
+        if (zoom < 5) {
+            setZoom(zoom + 1);
+        }
+    }
+
+    // for zoom in and zoom out
+    const zoomOut = () => {
+        if (zoom > 1) {
+            setZoom(zoom - 1);
+        }
+    }
 
     // change class code
     const handleClassChange = classCode => {
@@ -146,7 +175,54 @@ const Home = () => {
                     </div>
 
                     <div>
-                    {selectedMetrics === "Tempo" && selectedExercise !== '' ? <TempoChart originalData={original} originalData2={original2} exerciseData1={performance1} exerciseData2={performance2} exercise={selectedExercise} /> : <div className="d=none"></div>}
+                    {
+                    selectedMetrics === "Tempo" && selectedExercise !== '' ? 
+                        <div>
+                            <div className="tempo-analysis">
+                                <div>
+                                    <TempoChart 
+                                        originalData={original} 
+                                        originalData2={original2} 
+                                        exerciseData1={performance1}
+                                        exerciseData1Performance2={performance1Second}
+                                        exerciseData2={performance2} 
+                                        exercise={selectedExercise}
+                                        selectedRecords={selectedRecords} 
+                                    /> 
+                                    <div style={{width: "100%"}}>
+                                        <div className='record-history-title'>Select History Records to Display (Up to 3):</div>
+                                            <div className='chart-config'>
+                                                <div className='record-history'>
+                                                    <div className='record-group' onClick={selectRecord}>
+                                                        <input type='checkbox' id='record1' value='record1' />
+                                                        <label htmlFor='record1'>08/09/2023 18:00</label>
+                                                    </div>
+
+                                                    <div className='record-group' onClick={selectRecord}>
+                                                        <input type='checkbox' id='record2' value='record2' />
+                                                        <label htmlFor='record2'>09/09/2023 18:00</label>
+                                                    </div>
+                                                </div>
+
+                                            <div className='zoom-buttons'>
+                                                <div className='zoom-in' onClick={zoomIn}>Zoom In</div>
+                                                <div className='zoom-out' onClick={zoomOut}>Zoom Out</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="tempo-rate">
+                                    <div className="tempo-rate-title">Tempo Rate</div>
+                                    <div className="latest-rate">Latest Rate: 65 BPM</div>
+                                    <div className="average-rate">Average Rate: 60 BPM</div>
+                                    <div className="times-completed">Times Completed: 2/2</div>
+                                </div>
+                            </div>
+                        </div>
+                        : 
+                        <div className="d=none"></div>
+                    }
+                    
                     </div>
                 </div> 
                 : 
