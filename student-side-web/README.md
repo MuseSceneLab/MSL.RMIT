@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# FRONT-END DOCUMENTATION
+
+
+### Sign-up functionality
+This .js file contains the Student Sign up form and functionality to store a new student's details into the AWS database
+
+``` const [studentDetails, setStudentDetails] = useState({...}); ```
+Student details list, where the data is stored upon sign up
+
+``` const [errorMessages, setErrorMessages] = useState({...}); ```
+Set error messages for each input
+
+``` const handleInputChange = event => {...}; ```
+Handles input changes for the form, it extracts the name and value properties and updates the studentDetails state, while also checking if value is an empty string (and if so, updates error message state).
+
+``` const handleSignUp = event => {...}; ```
+Creates a new student account in the local storage by checking if all fields are not empty, removes password before storing, and stores the user details by converting to a JSON string "user", clear input fields and redirects user to the home page.
+
+#### HTML 
+
+A form container is created to display the sign up elements.
+- Contains multiple input/select boxes for relevant user information required for sign up (first/last name, email, school, instrument, course, password)
+- Redirection buttons to go back or log in
+
+
