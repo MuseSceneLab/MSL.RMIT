@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
 import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
-import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
-import { testData } from "../data/repository";
+import { NoStudentInClass, noResultsIcon } from "../assets/Icons";
 import TempoChart from "../components/TempoChart";
-import { original, original2, performance1, performance2 } from "../resources/metricsData";
+import { original, original2, performance1, performance1Second, performance2, performance2Second } from "../resources/metricsData";
+import TimesCompletedChart from "../components/TimesCompletedChart";
 
 const Home = () => {
 
@@ -19,13 +18,42 @@ const Home = () => {
     const [selectedClass, setSelectedClass] = useState('');
 
     // state variable for displaying exercise metrics
-    const [selectedExercise, setSelectedExercise] = useState(0);
+    const [selectedExercise, setSelectedExercise] = useState('');
 
     // selection of metrics
     const [selectedMetrics, setSelectedMetrics] = useState("Intonation");
 
     // selection of evolution or last rehearsal
     const [selectedEvolution, setSelectedEvolution] = useState("Evolution");
+
+    // for selecting history records
+    const [selectedRecords, setSelectedRecords] = useState([]);
+
+    // for zoom in and zoom out
+    const [zoom, setZoom] = useState(2);
+
+    // for selecting history records
+    const selectRecord = (e) => {
+        if (e.target.checked) {
+            setSelectedRecords([...selectedRecords, e.target.id]);
+        } else {
+            setSelectedRecords(selectedRecords.filter(record => record !== e.target.id));
+        }
+    }
+
+    // for zoom in and zoom out
+    const zoomIn = () => {
+        if (zoom < 5) {
+            setZoom(zoom + 1);
+        }
+    }
+
+    // for zoom in and zoom out
+    const zoomOut = () => {
+        if (zoom > 1) {
+            setZoom(zoom - 1);
+        }
+    }
 
     // change class code
     const handleClassChange = classCode => {
@@ -120,6 +148,8 @@ const Home = () => {
                 <option value=''>Select an exercise</option>
                 <option value={1}>Exercise 1</option>
                 <option value={2}>Exercise 2</option>
+                <option value={3}>Exercise 3</option>
+                <option value={4}>Exercise 4</option>
                 {/* <option value={3}>Exercise 3</option> */}
             </select>
 
@@ -145,8 +175,62 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="chart-container">
-                    {selectedMetrics === "Tempo" && selectedExercise !== '' ? <TempoChart originalData={original} originalData2={original2} exerciseData1={performance1} exerciseData2={performance2} exercise={selectedExercise} /> : <div className="d=none"></div>}
+                    <div>
+                    {
+                    selectedMetrics === "Tempo" && selectedExercise !== '' ? 
+                        <div>
+                            <div className="tempo-analysis">
+                                <div>
+                                    <TempoChart 
+                                        originalData={original} 
+                                        originalData2={original2} 
+                                        exerciseData1={performance1}
+                                        exerciseData1Performance2={performance1Second}
+                                        exerciseData2={performance2} 
+                                        exerciseData2Performance2={performance2Second}
+                                        exercise={selectedExercise}
+                                        selectedRecords={selectedRecords} 
+                                        zoom = {zoom}
+                                    /> 
+                                    <div style={{width: "100%"}}>
+                                        <div className='record-history-title'>Select History Records to Display (Up to 3):</div>
+                                            <div className='chart-config'>
+                                                <div className='record-history'>
+                                                    <div className='record-group' onClick={selectRecord}>
+                                                        <input type='checkbox' id='record1' value='record1'/>
+                                                        <label htmlFor='record1'>08/09/2023 18:00</label>
+                                                    </div>
+
+                                                    <div className='record-group' onClick={selectRecord}>
+                                                        <input type='checkbox' id='record2' value='record2' />
+                                                        <label htmlFor='record2'>09/09/2023 18:00</label>
+                                                    </div>
+                                                </div>
+
+                                            <div className='zoom-buttons'>
+                                                <div className='zoom-in' onClick={zoomIn}>Zoom In</div>
+                                                <div className='zoom-out' onClick={zoomOut}>Zoom Out</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="tempo-rate">
+                                    <div className="tempo-rate-title">Tempo Rate</div>
+                                    <div className="latest-rate">Latest Rate: 65 BPM</div>
+                                    <div className="average-rate">Average Rate: 60 BPM</div>
+                                    <div className="times-completed">
+                                        <div>Times Completed</div>
+                                        <div className="times-completed-pie-chart">
+                                            <TimesCompletedChart completed={2} failed={0} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        : 
+                        <div className="d=none"></div>
+                    }
+                    
                     </div>
                 </div> 
                 : 
