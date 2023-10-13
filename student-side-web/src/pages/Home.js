@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
 import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
-import { NoStudentInClass, UserIcon, noResultsIcon } from "../assets/Icons";
-import { testData } from "../data/repository";
+import { NoStudentInClass, noResultsIcon } from "../assets/Icons";
 import TempoChart from "../components/TempoChart";
-import { original, original2, performance1, performance1Second, performance2 } from "../resources/metricsData";
+import { original, original2, performance1, performance1Second, performance2, performance2Second } from "../resources/metricsData";
+import TimesCompletedChart from "../components/TimesCompletedChart";
 
 const Home = () => {
 
@@ -149,6 +148,8 @@ const Home = () => {
                 <option value=''>Select an exercise</option>
                 <option value={1}>Exercise 1</option>
                 <option value={2}>Exercise 2</option>
+                <option value={3}>Exercise 3</option>
+                <option value={4}>Exercise 4</option>
                 {/* <option value={3}>Exercise 3</option> */}
             </select>
 
@@ -186,15 +187,17 @@ const Home = () => {
                                         exerciseData1={performance1}
                                         exerciseData1Performance2={performance1Second}
                                         exerciseData2={performance2} 
+                                        exerciseData2Performance2={performance2Second}
                                         exercise={selectedExercise}
                                         selectedRecords={selectedRecords} 
+                                        zoom = {zoom}
                                     /> 
                                     <div style={{width: "100%"}}>
                                         <div className='record-history-title'>Select History Records to Display (Up to 3):</div>
                                             <div className='chart-config'>
                                                 <div className='record-history'>
                                                     <div className='record-group' onClick={selectRecord}>
-                                                        <input type='checkbox' id='record1' value='record1' />
+                                                        <input type='checkbox' id='record1' value='record1'/>
                                                         <label htmlFor='record1'>08/09/2023 18:00</label>
                                                     </div>
 
@@ -215,7 +218,12 @@ const Home = () => {
                                     <div className="tempo-rate-title">Tempo Rate</div>
                                     <div className="latest-rate">Latest Rate: 65 BPM</div>
                                     <div className="average-rate">Average Rate: 60 BPM</div>
-                                    <div className="times-completed">Times Completed: 2/2</div>
+                                    <div className="times-completed">
+                                        <div>Times Completed</div>
+                                        <div className="times-completed-pie-chart">
+                                            <TimesCompletedChart completed={2} failed={0} />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

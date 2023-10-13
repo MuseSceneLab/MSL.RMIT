@@ -326,6 +326,7 @@ thick-hr {
   display: flex;
   width: 100%;
   gap: 1rem;
+  overflow: scroll;
 }
 
 .tempo-rate {
@@ -338,12 +339,13 @@ thick-hr {
   font-weight: 700;
 }
 
-.tempo-rate-title {
+.tempo-rate-title, .times-completed  {
   font-size: 1.25rem;
   text-align: center;
+  margin-top: 3rem;
 }
 
-.latest-rate, .average-rate, .times-completed {
+.latest-rate, .average-rate {
   font-size: 1rem;
   text-align: center;
   margin-top: 1rem;
@@ -351,6 +353,10 @@ thick-hr {
   padding: .5rem;
   border: var(--colour-black) solid 1px;
   border-radius: .5rem;
+}
+
+.times-completed-pie-chart {
+  margin-left: 50px;
 }
 
 .latest-rate {
@@ -362,14 +368,49 @@ thick-hr {
 }
 
 .times-completed  {
-  background: rgb(79,47,138);
-  background: linear-gradient(45deg, rgba(79,47,138,1) 0%, rgba(147,84,194,1) 50%, rgba(79,47,138,1) 100%);
-  color: var(--colour-white);
+  margin-top: 5rem;
 }
+
+.times-completed-rate {
+  color: var(--colour-black);
+  background-color: var(--colour-white);
+  font-weight: 700;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  padding-top: 45px;
+  position: relative;
+  transform: translate(40px, -160px);
+  margin-bottom: -100px;
+}
+
 
 .chart-container {
   position: relative;
   width: 60vw;
+}
+
+.chart-label-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.chart-label-performance {
+  width: 50px;
+  height: 1px;
+  border-top: var(--colour-black) solid 2px;
+  transform: translateY(10px);
+}
+
+.chart-label-dynamics {
+  width: 70px;
+  height: 1px;
+  border-top: var(--colour-black) dashed 2px;
+  transform: translateY(10px);
+}
+
+.chart-data-overflow {
   overflow: scroll;
   white-space: nowrap; 
 }
@@ -816,7 +857,7 @@ input[type="radio"]:checked::before {
 
 .edit-profile-button {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   cursor: pointer;
 }
 
@@ -836,7 +877,7 @@ input[type="radio"]:checked::before {
 
 .profile-item-title {
   width: 250px;
-  text-align: end;
+  text-align: flex-end;
   color: var(--colour-placeholder-grey);
 }
 
