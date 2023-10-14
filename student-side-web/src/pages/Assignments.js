@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import GreetingHeading from "../components/GreetingHeading";
-import { SettingsIcon, UserIcon } from "../assets/Icons.js";
 import '../index.css';
 import SettingsButton from '../components/SettingsButton';
 
+/**
+ * Assignments page component
+ * @returns {JSX.Element} Assignments page JSX element
+ */
 const Assignments = () => {
     const userRole = localStorage.getItem('userRole');
     const [searchTerm, setSearchTerm] = useState('');
@@ -16,14 +19,26 @@ const Assignments = () => {
         tests: false,
     });
 
+    /**
+     * Handle search input change
+     * @param {React.ChangeEvent<HTMLInputElement>} e - Input change event
+     */
     const handleSearchInputChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
+    /**
+     * Handle sort by click
+     * @param {string} option - Sorting option
+     */
     const handleSortByClick = (option) => {
         setSortBy(option);
     };
 
+    /**
+     * Handle row toggle
+     * @param {string} rowName - Row name
+     */
     const handleRowToggle = (rowName) => {
         setExpandedRows((prevState) => ({
             ...prevState,
@@ -61,9 +76,7 @@ const Assignments = () => {
                 </div>
             </div>
             <div className="line"></div>
-
-
-               </div>
+        </div>
     );
 }
 

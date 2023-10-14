@@ -1,11 +1,16 @@
+
+
 import React from 'react';
 import MSLLogo from '../assets/Logo.png';
 import '../index.css';
 import { createProfessorAccount } from '../data/repository';
 import { useState } from 'react';
 
+/**
+ * A component that renders a form for professors to sign up for an account.
+ * @returns {JSX.Element} The ProfessorSignupForm component.
+ */
 const ProfessorSignupForm = () => {
-
 
   // state to hold error messages
   const [errorMessages, setErrorMessages] = useState({
@@ -16,7 +21,6 @@ const ProfessorSignupForm = () => {
     password: ''
   })
 
-
   // state to hold professor details
   const [professorDetails, setProfessorDetails] = useState({
     firstName: '',
@@ -26,8 +30,10 @@ const ProfessorSignupForm = () => {
     password: ''
   });
 
-
-  // logic to handle input change
+  /**
+   * A function that handles changes to the input fields in the form.
+   * @param {Object} event - The event object.
+   */
   const handleInputChange = event => {
     const { name, value } = event.target;
 
@@ -41,6 +47,10 @@ const ProfessorSignupForm = () => {
     }
   };
 
+  /**
+   * A function that handles the sign up button click event.
+   * @param {Object} event - The event object.
+   */
   const handleSignUp = event => {
     event.preventDefault();
 

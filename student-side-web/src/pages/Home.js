@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import GreetingHeading from "../components/GreetingHeading";
 import SettingsButton from "../components/SettingsButton";
@@ -6,6 +7,10 @@ import TempoChart from "../components/TempoChart";
 import { original, original2, performance1, performance1Second, performance2, performance2Second } from "../resources/metricsData";
 import TimesCompletedChart from "../components/TimesCompletedChart";
 
+/**
+ * Home page component for student users
+ * @returns {JSX.Element} Home page JSX element
+ */
 const Home = () => {
 
     // Get user role
@@ -32,7 +37,10 @@ const Home = () => {
     // for zoom in and zoom out
     const [zoom, setZoom] = useState(2);
 
-    // for selecting history records
+    /**
+     * Function to handle selection of history records
+     * @param {Object} e - Event object
+     */
     const selectRecord = (e) => {
         if (e.target.checked) {
             setSelectedRecords([...selectedRecords, e.target.id]);
@@ -41,42 +49,60 @@ const Home = () => {
         }
     }
 
-    // for zoom in and zoom out
+    /**
+     * Function to zoom in on exercise metrics chart
+     */
     const zoomIn = () => {
         if (zoom < 5) {
             setZoom(zoom + 1);
         }
     }
 
-    // for zoom in and zoom out
+    /**
+     * Function to zoom out on exercise metrics chart
+     */
     const zoomOut = () => {
         if (zoom > 1) {
             setZoom(zoom - 1);
         }
     }
 
-    // change class code
+    /**
+     * Function to handle change of class code
+     * @param {string} classCode - Selected class code
+     */
     const handleClassChange = classCode => {
         setSelectedClass(classCode);
     }
 
-    // change exercise from user input
+    /**
+     * Function to handle change of selected exercise
+     */
     const handleExerciseChange = () => {
         const exercise = document.querySelector('.exercise-drop-down').value;
         setSelectedExercise(exercise);
     }
 
-    // change metrics
+    /**
+     * Function to handle change of selected metrics
+     * @param {string} metrics - Selected metrics
+     */
     const handleMetricsChange = metrics => {
         setSelectedMetrics(metrics);
     }
 
-    // change evolution or last rehearsal
+    /**
+     * Function to handle change of selected evolution
+     * @param {string} input - Selected evolution
+     */
     const handleEvolutionChange = input => {
         setSelectedEvolution(input);
     }
 
-    // update exercise metrics chart
+    /**
+     * Function to update exercise metrics chart
+     */
+    // TODO: implement this function
     const updateResults = () => {
 
     }

@@ -1,3 +1,30 @@
+
+
+/**
+ * FILEPATH: /Users/jackylai/Desktop/RMIT_work_related/year_3_sem_2/Programming Project 1/MSL.RMIT/student-side-web/src/assets/Icons.js
+ * 
+ * Contains the following SVG icon components:
+ * - HomeIcon
+ * - StudioIcon
+ * - InboxIcon
+ * - LibraryIcon
+ * - LogOutIcon
+ * - SettingsIcon
+ * - dropDownIcon
+ * - noResultsIcon
+ * - studentIcon
+ * - professorIcon
+ * - UserIcon
+ * - EditIcon
+ * - FAQIcon
+ * - categoryTitle
+ * - StudentsIcon
+ * - AssignmentsIcon
+ * - GalleryIcon
+ * - NoStudentInClass
+ * Also exports the MSLLogo image.
+ */
+
 export const HomeIcon = () => {
     return (
         <svg className='nav-bar-item-icon' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

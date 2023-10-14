@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Import images
 import { studentIcon, professorIcon, MSLLogo } from '../assets/Icons';
@@ -6,9 +6,16 @@ import { studentIcon, professorIcon, MSLLogo } from '../assets/Icons';
 // For local storage
 const USER_ROLE_KEY = 'userRole';
 
+/**
+ * UserSelection component for selecting user role
+ * @returns {JSX.Element} UserSelection component
+ */
 function UserSelection() {
 
-  // Function for setting user role in local storage
+  /**
+   * Function for setting user role in local storage
+   * @param {string} role - User role to be set in local storage
+   */
   const setRole = (role) => {
     localStorage.setItem(USER_ROLE_KEY, role);
   }

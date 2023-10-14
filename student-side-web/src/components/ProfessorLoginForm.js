@@ -1,9 +1,14 @@
+
+
 import MSLLogo from '../assets/Logo.png';
 import '../index.css';
 import { useState } from 'react';
 import { professorLogIn } from '../data/repository';
-import { professorIcon } from '../assets/Icons';
 
+/**
+ * A form component for professor login.
+ * @returns {JSX.Element} The JSX code for the professor login form.
+ */
 const ProfessorLoginForm = () => {
     
     // userRole is used to determine whether the user is a student or professor
@@ -21,7 +26,10 @@ const ProfessorLoginForm = () => {
         password: "",
     });
 
-    // logic to handle input change, update credentials state on change
+    /**
+     * Handles input change and updates the credentials state on change.
+     * @param {Object} event - The event object.
+     */
     const handleInputChange = (event) => {
         
       const { name, value } = event.target;
@@ -35,7 +43,10 @@ const ProfessorLoginForm = () => {
       }
     };
 
-    // logic to handle login
+    /**
+     * Handles professor login.
+     * @param {Object} event - The event object.
+     */
     const handleLogin = (event) => {
         event.preventDefault();
 
@@ -60,8 +71,6 @@ const ProfessorLoginForm = () => {
             })
         }
     }
-
-
 
     // get the user's role from local storage if it exists, else set it to Professor
     if (localStorage.getItem('userRole') !== null) {

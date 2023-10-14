@@ -1,3 +1,17 @@
+/**
+ * A component that renders a tempo chart based on the provided data and exercise number.
+ * @param {Object} props - The props object that contains the necessary data for rendering the chart.
+ * @param {Array} props.originalData - The original tempo data.
+ * @param {Array} props.exerciseData1 - The tempo data for the first performance of the exercise.
+ * @param {Array} props.exerciseData1Performance2 - The tempo data for the second performance of the exercise.
+ * @param {Array} props.originalData2 - The original tempo data for exercise 2, 3, and 4.
+ * @param {Array} props.exerciseData2 - The tempo data for the first performance of exercise 2, 3, and 4.
+ * @param {Array} props.exerciseData2Performance2 - The tempo data for the second performance of exercise 2, 3, and 4.
+ * @param {string} props.exercise - The exercise number.
+ * @param {Array} props.selectedRecords - The selected records.
+ * @param {number} props.zoom - The zoom scale.
+ * @returns {JSX.Element} - The tempo chart component.
+ */
 import { XYPlot, LineSeries, XAxis, YAxis, MarkSeries } from 'react-vis';
 
 

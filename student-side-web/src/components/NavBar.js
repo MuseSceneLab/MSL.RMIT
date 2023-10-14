@@ -1,7 +1,14 @@
+
+
 import React, { useEffect, useState } from 'react';
 import { HomeIcon, StudioIcon, InboxIcon, LibraryIcon, MSLLogo, FAQIcon, StudentsIcon, GalleryIcon, AssignmentsIcon } from '../assets/Icons.js';
 import LogoutButton from './LogoutButton.js';
 
+/**
+ * NavBar component that displays the navigation bar for the application
+ * @function
+ * @return {JSX.Element} The JSX code for the NavBar component
+ */
 const NavBar = () => {
 
     // Get current url location
@@ -15,13 +22,15 @@ const NavBar = () => {
     // function for toggling navbar
     const [navBarExpanded, setNavBarExpanded] = useState(true);
 
-    {/* toggleNavBar()
-      * expand/collapse navbar
-      * @param none
-      * @return none
-      * @precondition none
-      * @postcondition navbar is expanded/collapsed
-    */}
+    /**
+     * toggleNavBar()
+     * expand/collapse navbar
+     * @function
+     * @param {none}
+     * @return {none}
+     * @precondition none
+     * @postcondition navbar is expanded/collapsed
+     */
     const toggleNavBar = () => {
         setNavBarExpanded(!navBarExpanded);
         if (!navBarExpanded) {
