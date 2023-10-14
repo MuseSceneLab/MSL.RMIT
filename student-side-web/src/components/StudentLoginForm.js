@@ -1,9 +1,15 @@
+
+
 import React from 'react';
 import MSLLogo from '../assets/Logo.png';
 import '../index.css';
 import { useState } from 'react';
 import { studentLogIn } from '../data/repository';
 
+/**
+ * A form component for student login.
+ * @returns {JSX.Element} The student login form.
+ */
 function StudentLoginForm() {
 
   // state to hold error messages
@@ -18,7 +24,10 @@ function StudentLoginForm() {
     password: '',
   });
 
-  // handle input change
+  /**
+   * Handles input change and updates the credentials and error messages state.
+   * @param {Object} event - The input change event.
+   */
   const handleInputChange = event => {
     const { name, value } = event.target;
     setCredentials({ ...credentials, [name]: value });
@@ -31,6 +40,10 @@ function StudentLoginForm() {
     }
   };
 
+  /**
+   * Handles login and redirects to dashboard if login is successful.
+   * @param {Object} event - The login button click event.
+   */
   const handleLogin = event => {
     event.preventDefault();
     

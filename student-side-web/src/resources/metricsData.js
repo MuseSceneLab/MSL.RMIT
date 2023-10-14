@@ -1,3 +1,7 @@
+/**
+ * An array to store the original metrics data.
+ * @type {Array}
+ */
 const original = []
 for (let i = 0; i < 28; i++) {
     original.push([i + 1, 1, 60, 0.5])

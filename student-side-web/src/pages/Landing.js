@@ -1,3 +1,7 @@
+/**
+ * Renders the Landing page component.
+ * @returns {JSX.Element} Landing page component
+ */
 const Landing = () => {
     return (
         <div>

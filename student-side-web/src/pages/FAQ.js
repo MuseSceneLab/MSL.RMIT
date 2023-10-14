@@ -1,5 +1,8 @@
+/**
+ * FAQ page component that displays frequently asked questions and their answers.
+ * @returns {JSX.Element} FAQ page component
+ */
 import GreetingHeading from "../components/GreetingHeading";
-import { UserIcon, categoryTitle } from "../assets/Icons.js";
 import SettingsButton from "../components/SettingsButton";
 
 const FAQ = () => {

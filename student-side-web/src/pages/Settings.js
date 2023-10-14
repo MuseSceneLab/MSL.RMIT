@@ -1,3 +1,10 @@
+/**
+ * This file contains the Settings page component, which displays various settings options for the user to modify.
+ * The component imports several other components and icons, as well as the useEffect and useState hooks from React.
+ * The component defines several states for different settings categories, such as language and privacy, as well as for account information and profile.
+ * The component also defines several functions for handling user input and modifying the different states.
+ * Finally, the component returns a JSX element that displays the different settings categories and their corresponding options.
+ */
 import GreetingHeading from "../components/GreetingHeading";
 import { UserIcon, EditIcon, MSLLogo } from "../assets/Icons";
 import { useEffect, useState } from "react";
@@ -59,6 +66,7 @@ const Settings = () => {
       * @param {boolean} targeting (default: true)
       * @return none
     */}
+    //TODO: Make these configurable
     const handlePrivacy = (strictlyNecessary, performance, functional, targeting) => {
         setPrivacy({
             strictlyNecessary: strictlyNecessary,
@@ -69,9 +77,8 @@ const Settings = () => {
     }
 
     {/* Function for selecting account information
-      * @param {string} email (default: '
-      * @param {string} password (default: '
-      * @param {string} username (default: '
+      * @param {string} event 
+      * @param {string} type
       * @return none
     */}
     const handleAccountInformation = (event, type) => {
@@ -90,10 +97,8 @@ const Settings = () => {
     }
 
     {/* Function for selecting profile 
-      * @param {string} name (default: '
-      * @param {string} lastName (default: '
-      * @param {string} institution (default: '
-      * @param {string} program (default: '
+      * @param {string} event
+      * @param {string} type
       * @return none
     */}
     const editProfile = (event, type) => {

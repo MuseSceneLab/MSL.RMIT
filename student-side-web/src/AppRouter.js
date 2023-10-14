@@ -1,22 +1,29 @@
+/**
+ * This module defines the AppRouter component, which is responsible for routing the application.
+ * @module AppRouter
+ */
+
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Studio from '../pages/Studio';
-import Inbox from '../pages/Inbox';
-import Library from '../pages/Library';
-import NavBar from '../components/NavBar';
-import UserSelection from '../pages/UserSelection';
-import Landing from '../pages/Landing';
-import Login from '../pages/Login';
-import Signup from '../pages/Signup';
-import Settings from '../pages/Settings';
-import FAQ from '../pages/FAQ';
-import Students from '../pages/Students';
-import Assignments from '../pages/Assignments';
-import Gallery from '../pages/Gallery';
+import Home from './pages/Home';
+import Studio from './pages/Studio';
+import Inbox from './pages/Inbox';
+import Library from './pages/Library';
+import NavBar from './components/NavBar';
+import UserSelection from './pages/UserSelection';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Settings from './pages/Settings';
+import FAQ from './pages/FAQ';
+import Students from './pages/Students';
+import Assignments from './pages/Assignments';
+import Gallery from './pages/Gallery';
 
-
-
+/**
+ * AppRouter component
+ * @returns {JSX.Element} Returns the JSX element that represents the AppRouter component.
+ */
 const AppRouter = () => {
 
     var location = window.location.href.split('#')[1];

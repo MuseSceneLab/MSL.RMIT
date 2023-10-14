@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import GreetingHeading from "../components/GreetingHeading";
-import { UserIcon, categoryTitle } from "../assets/Icons.js";
 import '../index.css';
 import FilterIcon from '../assets/filter.svg';
 import SettingsButton from '../components/SettingsButton';
 
+/**
+ * Students component that displays a tabbed interface for viewing student information.
+ * @returns {JSX.Element} JSX element containing the Students component.
+ */
 const Students = () => {
     const userRole = localStorage.getItem('userRole');
     const [selectedTab, setSelectedTab] = useState('First Name');
 
+    /**
+     * Event handler for tab clicks. Sets the selected tab to the clicked tab.
+     * @param {string} tabName - The name of the clicked tab.
+     */
     const handleTabClick = (tabName) => {
         setSelectedTab(tabName);
     }
