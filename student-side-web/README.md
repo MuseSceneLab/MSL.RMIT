@@ -32,7 +32,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run deploy` (for deploying to github pages)
 
 This command will build the app and deploy it to the gh-pages branch of the repository.\
-The app will be available at [https://siddharth-rajput.github.io/student-side-web/](https://siddharth-rajput.github.io/student-side-web/)
+The app will be available at [https://siddharth-rajput.github.io/student-side-web/](https://siddharth-rajput.github.io/student-side-web/)\
+
+[Deployment Methods Click Me](https://github.com/gitname/react-gh-pages)\
 
 
 ### `npm run eject`
