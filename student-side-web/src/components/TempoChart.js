@@ -48,17 +48,17 @@ const TempoChart = (props) => {
     if (exercise === 1) {
         for (let i = 0; i < props.originalData.length; i++) {
             originalData.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/2 , y: props.originalData[i][2]})
-            originalDynamics.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/2 , y: props.originalData[i][3] * 10 + 20})
+            originalDynamics.push({x: props.originalData[i][0] + (props.originalData[i][1] - 1)/2 , y: props.originalData[i][3] * 5})
         }
 
         for (let i = 0; i < props.exerciseData1.length; i++) {
             exerciseData1.push({x: props.exerciseData1[i][0] + (props.exerciseData1[i][1] - 1)/2 , y: props.exerciseData1[i][2]})
-            perfomance1Dynamics.push({x: props.exerciseData1[i][0] + (props.exerciseData1[i][1] - 1)/2 , y: props.exerciseData1[i][3] * 10 + 20})
+            perfomance1Dynamics.push({x: props.exerciseData1[i][0] + (props.exerciseData1[i][1] - 1)/2 , y: props.exerciseData1[i][3] * 5})
         }
 
         for (let i = 0; i < props.exerciseData1Performance2.length; i++) {
             exerciseData2.push({x: props.exerciseData1Performance2[i][0] + (props.exerciseData1Performance2[i][1] - 1)/2 , y: props.exerciseData1Performance2[i][2]})
-            perfomance2Dynamics.push({x: props.exerciseData1Performance2[i][0] + (props.exerciseData1Performance2[i][1] - 1)/2 , y: props.exerciseData1Performance2[i][3] * 10 + 20})
+            perfomance2Dynamics.push({x: props.exerciseData1Performance2[i][0] + (props.exerciseData1Performance2[i][1] - 1)/2 , y: props.exerciseData1Performance2[i][3] * 5})
         }
     }
 
@@ -66,16 +66,16 @@ const TempoChart = (props) => {
     if (exercise === 2 || exercise === 3 || exercise === 4) {
         for (let i = 0; i < props.originalData2.length; i++) {
             originalData.push({x: props.originalData2[i][0] + (props.originalData2[i][1] - 1)/4 , y: props.originalData2[i][2]})
-            originalDynamics.push({x: props.originalData2[i][0] + (props.originalData2[i][1] - 1)/4 , y: props.originalData2[i][3] * 10 + 20})
+            originalDynamics.push({x: props.originalData2[i][0] + (props.originalData2[i][1] - 1)/4 , y: props.originalData2[i][3] * 5})
         }
         for (let i = 0; i < props.exerciseData2.length; i++) {
             exerciseData1.push({x: props.exerciseData2[i][0] + (props.exerciseData2[i][1] - 1)/4 , y: props.exerciseData2[i][2]})
-            perfomance1Dynamics.push({x: props.exerciseData2[i][0] + (props.exerciseData2[i][1] - 1)/4 , y: props.exerciseData2[i][3] * 10 + 20})
+            perfomance1Dynamics.push({x: props.exerciseData2[i][0] + (props.exerciseData2[i][1] - 1)/4 , y: props.exerciseData2[i][3] * 5})
         }
 
         for (let i = 0; i < props.exerciseData2Performance2.length; i++) {
             exerciseData2.push({x: props.exerciseData2Performance2[i][0] + (props.exerciseData2Performance2[i][1] - 1)/4 , y: props.exerciseData2Performance2[i][2]})
-            perfomance2Dynamics.push({x: props.exerciseData2Performance2[i][0] + (props.exerciseData2Performance2[i][1] - 1)/4 , y: props.exerciseData2Performance2[i][3] * 10 + 20})
+            perfomance2Dynamics.push({x: props.exerciseData2Performance2[i][0] + (props.exerciseData2Performance2[i][1] - 1)/4 , y: props.exerciseData2Performance2[i][3] * 5})
         }
 
         if (exercise !== 2) {
@@ -87,7 +87,7 @@ const TempoChart = (props) => {
         }
     }
 
-    const possibleBPMs = [originalData[0].y - 50, originalData[0].y - 40, originalData[0].y - 30, originalData[0].y - 20, originalData[0].y - 10, originalData[0].y, originalData[0].y + 10, originalData[0].y + 20, originalData[0].y + 30, originalData[0].y + 40, originalData[0].y + 50];
+    const possibleBPMs = [originalData[0].y - 80, originalData[0].y - 70, originalData[0].y - 60, originalData[0].y - 50, originalData[0].y - 40, originalData[0].y - 30, originalData[0].y - 20, originalData[0].y - 10, originalData[0].y, originalData[0].y + 10, originalData[0].y + 20, originalData[0].y + 30, originalData[0].y + 40, originalData[0].y + 50];
 
     return (
         <div>
@@ -96,7 +96,23 @@ const TempoChart = (props) => {
                     <YAxis tickTotal={possibleBPMs.length} tickValues={possibleBPMs} tickFormat={value => {
                         if (value === originalData[0].y) {
                             return <tspan style={{stroke: "#262261"}}>{`${value} bpm`}</tspan>
-                        } else if (value < originalData[0].y) {
+                        }  else if (value === 20) {
+                            // TODO: change this
+                            return <tspan style={{stroke: "#7F52E2"}}>{`${originalDynamics[0].y * 40}`}</tspan>
+                        } else if (value === 10) {
+                            // TODO: change this
+                            return <tspan style={{stroke: "#7F52E2"}}>{`${originalDynamics[0].y * 40 - 25}`}</tspan>
+                        } else if (value === 0) {
+                            // TODO: change this
+                            return <tspan style={{stroke: "#7F52E2"}}>{`${originalDynamics[0].y * 40 - 50}`}</tspan>
+                        } else if (value === -10) {
+                            // TODO: change this
+                            return <tspan style={{stroke: "#7F52E2"}}>{`${originalDynamics[0].y * 40 - 75}`}</tspan>
+                        } else if (value === -20) {
+                            // TODO: change this
+                            return <tspan style={{stroke: "#7F52E2"}}>{`${originalDynamics[0].y * 40 - 100}`}</tspan>
+                        }
+                        else if (value < originalData[0].y) {
                             return <tspan style={{stroke: "#F7931D"}}>{`${value} bpm`}</tspan>
                         } else if (value > originalData[0].y) {
                             return <tspan style={{stroke: "#ED2A7B"}}>{`${value} bpm`}</tspan>
